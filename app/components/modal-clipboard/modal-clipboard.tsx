@@ -11,6 +11,7 @@ import { modalClipboardVisibleVar } from "../../graphql/query"
 import { translate } from "../../i18n"
 import { color } from "../../theme"
 import { palette } from "../../theme/palette"
+import { isLnUrl } from "../../utils/lnurl"
 import { validPayment } from "../../utils/parsing"
 import { Token } from "../../utils/token"
 
@@ -73,7 +74,14 @@ export const ModalClipboard = () => {
 
   const open = async () => {
     dismiss()
-    navigation.navigate("sendBitcoin", { payment: await Clipboard.getString() })
+    const data = await Clipboard.getString()
+    const [protocol, invoice] = data.split(":")
+
+    if ((invoice && isLnUrl(invoice)) || isLnUrl(protocol)) {
+      navigation.navigate("sendLNUrl", { invoice: invoice ?? protocol })
+    } else {
+      navigation.navigate("sendBitcoin", { payment: await Clipboard.getString() })
+    }
   }
 
   const dismiss = () => {
@@ -92,7 +100,7 @@ export const ModalClipboard = () => {
       const clipboard = await Clipboard.getString()
       const { paymentType } = validPayment(clipboard, new Token().network, client)
       const pathString =
-        paymentType === "lightning"
+        paymentType === "lightning" || paymentType === "lnurl"
           ? "ModalClipboard.pendingInvoice"
           : "ModalClipboard.pendingBitcoin"
       setMessage(translate(pathString))

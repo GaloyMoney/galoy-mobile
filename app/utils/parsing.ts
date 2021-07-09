@@ -4,6 +4,7 @@ import url from "url"
 import { networks, address } from "bitcoinjs-lib"
 import { getDescription, getDestination, getUsername } from "./bolt11"
 import { getMyUsername, getPubKey } from "../graphql/query"
+import { isLnUrl } from "./lnurl"
 
 // TODO: look if we own the address
 
@@ -12,6 +13,7 @@ export type IPaymentType =
   | "onchain"
   | "onchainAndLightning"
   | "username"
+  | "lnurl"
   | undefined
 
 export interface IValidPaymentReponse {
@@ -79,13 +81,21 @@ export const validPayment = (
 
     // TODO manage bitcoin= case
   } else if (protocol.toLowerCase() === "lightning") {
-    paymentType = "lightning"
+    if (isLnUrl(data)) {
+      paymentType = "lnurl"
+    } else {
+      paymentType = "lightning"
+    }
 
     // no protocol. let's see if this could have an address directly
   } else if (protocol.toLowerCase().startsWith("ln")) {
     // possibly a lightning address?
 
-    paymentType = "lightning"
+    if (isLnUrl(protocol)) {
+      paymentType = "lnurl"
+    } else {
+      paymentType = "lightning"
+    }
 
     if (network === "testnet" && protocol.toLowerCase().startsWith("lnbc")) {
       return {
@@ -191,6 +201,12 @@ export const validPayment = (
       memo,
       paymentType,
       sameNode,
+    }
+  } else if (paymentType === "lnurl") {
+    return {
+      valid: true,
+      invoice: data,
+      paymentType,
     }
   } else {
     return {

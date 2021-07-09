@@ -73,10 +73,17 @@ export const ScanningQRCodeScreen = () => {
     }
 
     try {
-      const { valid, errorMessage } = validPayment(data, new Token().network, client)
-      console.log({ valid, errorMessage, data }, "result")
+      const { valid, errorMessage, invoice, paymentType } = validPayment(
+        data,
+        new Token().network,
+        client,
+      )
       if (valid) {
-        navigate("sendBitcoin", { payment: data })
+        if (paymentType === "lnurl") {
+          navigate("sendLNUrl", { invoice })
+        } else {
+          navigate("sendBitcoin", { payment: data })
+        }
       } else {
         setPending(true)
         Alert.alert(

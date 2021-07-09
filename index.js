@@ -8,8 +8,8 @@
 //
 // It's easier just to leave it here.
 
-import { AppRegistry } from "react-native"
 import { App } from "./app/app.tsx"
+import { AppRegistry } from "react-native"
 
 /**
  * This needs to match what's found in your app_delegate.m and MainActivity.java.

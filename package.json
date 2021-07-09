@@ -43,6 +43,7 @@
     "@react-navigation/stack": "^5.12.8",
     "@remobile/react-native-qrcode-local-image": "nicolasburtey/react-native-qrcode-local-image.git#master",
     "apollo3-cache-persist": "^0.9.1",
+    "bech32": "^2.0.0",
     "bip21": "^2.0.2",
     "bitcoinjs-lib": "^5.1.10",
     "bolt11": "https://github.com/nicolasburtey/bolt11#master",
