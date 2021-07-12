@@ -101,6 +101,7 @@ jobs:
       - run: npm -v
       - run: ruby -v
       - run: fastlane -v
+      - run: sleep 30m
       - run: yarn -v
       
       - run: yarn install
@@ -108,7 +109,10 @@ jobs:
       - run: echo $JAVA_OPTS
       - run: echo $GRADLE_OPTS
       - run: cd android && fastlane android beta
-      
+      - run: 
+         name: fastlane
+         command: cd android && fastlane android beta && sleep 20m
+         no_output_timeout: 30m
       - gke-auth
       - run:
           name: upload latest apk to gcs
