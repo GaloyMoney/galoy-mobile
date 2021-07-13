@@ -4,11 +4,11 @@ import { ApolloClient } from "@apollo/client"
 import { validPayment } from "./parsing"
 import { modalClipboardVisibleVar, walletIsActive } from "../graphql/query"
 import { Token } from "./token"
-import { loadString, saveString } from "./storage"
+import { loadString } from "./storage"
+import { LAST_CLIPBOARD_PAYMENT } from "../components/modal-clipboard"
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const checkClipboard = async (client: ApolloClient<object>): Promise<void> => {
-  const LAST_CLIPBOARD_PAYMENT = "lastClipboardPayment"
   const clipboard = await Clipboard.getString()
 
   if (!walletIsActive(client)) {
@@ -25,5 +25,4 @@ export const checkClipboard = async (client: ApolloClient<object>): Promise<void
   }
 
   modalClipboardVisibleVar(true)
-  saveString(LAST_CLIPBOARD_PAYMENT, clipboard)
 }

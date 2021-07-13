@@ -7,12 +7,16 @@ import { Button } from "react-native-elements"
 import Modal from "react-native-modal"
 import { SafeAreaView } from "react-native-safe-area-context"
 import Icon from "react-native-vector-icons/Ionicons"
+
 import { modalClipboardVisibleVar } from "../../graphql/query"
 import { translate } from "../../i18n"
 import { color } from "../../theme"
 import { palette } from "../../theme/palette"
 import { validPayment } from "../../utils/parsing"
 import { Token } from "../../utils/token"
+import { saveString } from "../../utils/storage"
+
+export const LAST_CLIPBOARD_PAYMENT = "last_clipboard_payment"
 
 const styles = StyleSheet.create({
   buttonContainer: {
@@ -72,12 +76,13 @@ export const ModalClipboard = () => {
   const navigation = useNavigation()
 
   const open = async () => {
-    dismiss()
+    modalClipboardVisibleVar(false)
     navigation.navigate("sendBitcoin", { payment: await Clipboard.getString() })
   }
 
-  const dismiss = () => {
+  const dismiss = async () => {
     modalClipboardVisibleVar(false)
+    saveString(LAST_CLIPBOARD_PAYMENT, await Clipboard.getString())
   }
   const [message, setMessage] = React.useState("")
 
