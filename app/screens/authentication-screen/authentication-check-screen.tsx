@@ -10,7 +10,7 @@ import KeyStoreWrapper from "../../utils/storage/secureStorage"
 import BiometricWrapper from "../../utils/biometricAuthentication"
 import type { ScreenType } from "../../types/screen"
 import { AuthenticationScreenPurpose, PinScreenPurpose } from "../../utils/enum"
-import { checkClipboard } from "../../utils/clipboard"
+import { showModalClipboardIfValidPayment } from "../../utils/clipboard"
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const BitcoinBeachLogo = require("../get-started-screen/bitcoinBeach3.png")
@@ -52,7 +52,7 @@ export const AuthenticationCheckScreen: ScreenType = ({ navigation }: Props) => 
         navigation.replace("pin", { screenPurpose: PinScreenPurpose.AuthenticatePin })
       } else {
         navigation.replace("Primary")
-        checkClipboard(client)
+        showModalClipboardIfValidPayment(client)
       }
     })()
   }, [])
