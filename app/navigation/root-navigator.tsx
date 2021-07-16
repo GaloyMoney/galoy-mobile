@@ -46,7 +46,7 @@ import { palette } from "../theme/palette"
 import { AccountType } from "../utils/enum"
 import { addDeviceToken } from "../utils/notifications"
 import { getNetwork, Token } from "../utils/token"
-import { checkClipboard } from "../utils/clipboard"
+import { showModalClipboardIfValidPayment } from "../utils/clipboard"
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const PushNotification = require("react-native-push-notification")
@@ -129,7 +129,7 @@ export const RootStack = () => {
   const _handleAppStateChange = (nextAppState) => {
     if (appState.current.match(/background/) && nextAppState === "active") {
       console.log("App has come to the foreground!")
-      checkClipboard(client)
+      showModalClipboardIfValidPayment(client)
     }
 
     appState.current = nextAppState

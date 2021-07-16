@@ -14,7 +14,7 @@ import KeyStoreWrapper from "../../utils/storage/secureStorage"
 import type { ScreenType } from "../../types/screen"
 import { PinScreenPurpose } from "../../utils/enum"
 import { sleep } from "../../utils/sleep"
-import { checkClipboard } from "../../utils/clipboard"
+import { showModalClipboardIfValidPayment } from "../../utils/clipboard"
 
 const styles = EStyleSheet.create({
   bottomSpacer: {
@@ -144,7 +144,7 @@ export const PinScreen: ScreenType = ({ route, navigation }: Props) => {
         index: 0,
         routes: [{ name: "Primary" }],
       })
-      checkClipboard(client)
+      showModalClipboardIfValidPayment(client)
     } else {
       if (pinAttempts < MAX_PIN_ATTEMPTS - 1) {
         const newPinAttempts = pinAttempts + 1

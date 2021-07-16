@@ -1,15 +1,23 @@
 import Clipboard from "@react-native-community/clipboard"
+import { ApolloClient } from "@apollo/client"
 
 import { validPayment } from "./parsing"
 import { modalClipboardVisibleVar, walletIsActive } from "../graphql/query"
 import { Token } from "./token"
-import { ApolloClient } from "@apollo/client"
+import { loadString } from "./storage"
+import { LAST_CLIPBOARD_PAYMENT } from "../components/modal-clipboard"
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export const checkClipboard = async (client: ApolloClient<object>): Promise<void> => {
+export const showModalClipboardIfValidPayment = async (
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  client: ApolloClient<object>,
+): Promise<void> => {
   const clipboard = await Clipboard.getString()
 
   if (!walletIsActive(client)) {
+    return
+  }
+
+  if (clipboard === (await loadString(LAST_CLIPBOARD_PAYMENT))) {
     return
   }
 
