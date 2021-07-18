@@ -1,9 +1,10 @@
+import { address, networks } from "bitcoinjs-lib"
 import * as lightningPayReq from "bolt11"
 import moment from "moment"
 import url from "url"
-import { networks, address } from "bitcoinjs-lib"
-import { getDescription, getDestination, getUsername } from "./bolt11"
 import { getMyUsername, getPubKey } from "../graphql/query"
+import { getDescription, getDestination, getUsername } from "./bolt11"
+import { LNPAY_DOMAIN } from "./helper"
 
 // TODO: look if we own the address
 
@@ -16,15 +17,16 @@ export type IPaymentType =
 
 export interface IValidPaymentReponse {
   valid: boolean
-  errorMessage?: string | undefined
-  invoice?: string | undefined // for lightning
-  address?: string | undefined // for bitcoin
-  amount?: number | undefined
-  amountless?: boolean | undefined
-  memo?: string | undefined
+  errorMessage?: string
+  invoice?: string // for lightning
+  address?: string // for bitcoin
+  amount?: number
+  amountless?: boolean
+  memo?: string
   paymentType?: IPaymentType
-  sameNode?: boolean | undefined
-  username?: string | undefined
+  sameNode?: boolean
+  username?: string
+  currency?: string
 }
 
 // TODO: enforce this from the backend
@@ -105,12 +107,15 @@ export const validPayment = (
 
     data = protocol.toLowerCase()
   } else if (protocol.toLowerCase() === "https") {
-    const domain = "//ln.bitcoinbeach.com/"
-    if (data.startsWith(domain)) {
+    const decodedData = url.parse(input, true)
+    if (decodedData.hostname === LNPAY_DOMAIN) {
       return {
         valid: true,
         paymentType: "username",
-        username: data.substring(domain.length),
+        username: decodedData.pathname.replace(/\//g, ""),
+        amount: Number(decodedData.query.amount),
+        memo: decodedData.query.memo as string,
+        currency: decodedData.query.currency as string,
       }
     }
   } else {

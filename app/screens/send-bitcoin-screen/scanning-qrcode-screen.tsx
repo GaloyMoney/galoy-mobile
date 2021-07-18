@@ -7,11 +7,13 @@ import EStyleSheet from "react-native-extended-stylesheet"
 import { launchImageLibrary } from "react-native-image-picker"
 import Svg, { Circle } from "react-native-svg"
 import Icon from "react-native-vector-icons/Ionicons"
+import url from "url"
 import { Screen } from "../../components/screen"
 import { translate } from "../../i18n"
 import { palette } from "../../theme/palette"
 import { validPayment } from "../../utils/parsing"
 import { Token } from "../../utils/token"
+import { LNPAY_DOMAIN } from "../../utils/helper"
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const LocalQRCode = require("@remobile/react-native-qrcode-local-image")
@@ -62,6 +64,31 @@ const styles = EStyleSheet.create({
   },
 })
 
+const getBillpayData = (client) => {
+  const baseUrl = "https://billpay.mainnet.galoy.io"
+  const fullUrl = `${baseUrl}/?client=${client}`
+  return fetch(fullUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status === "ERROR") {
+        throw new Error("Error while requesting billpay data")
+      }
+
+      const urlFormat = {
+        protocol: "https",
+        host: LNPAY_DOMAIN,
+        pathname: data.username,
+        query: {
+          amount: data.balance,
+          memo: `billpay ${data.customer}-${client}`,
+          currency: data.currency,
+        },
+      }
+
+      return url.format(urlFormat)
+    })
+}
+
 export const ScanningQRCodeScreen = () => {
   const { navigate, goBack } = useNavigation()
   const [pending, setPending] = React.useState(false)
@@ -70,6 +97,26 @@ export const ScanningQRCodeScreen = () => {
   const decodeInvoice = async (data) => {
     if (pending) {
       return
+    }
+
+    if (data.startsWith("200")) {
+      setPending(true)
+      try {
+        Alert.alert(`fetching billpay ${data}`)
+        const billpayEncoded = await getBillpayData(data)
+
+        if (billpayEncoded) {
+          Alert.alert(JSON.stringify(billpayEncoded))
+          // const d = { username: "nicolas", paymentType: "username" }
+          navigate("sendBitcoin", { payment: billpayEncoded })
+          return
+        } else {
+          Alert.alert("provider for billpay not supported")
+          setPending(false)
+        }
+      } catch (err) {
+        setPending(false)
+      }
     }
 
     try {

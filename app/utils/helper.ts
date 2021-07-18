@@ -1,5 +1,7 @@
 import { NativeModules, Platform } from "react-native"
 
+export const LNPAY_DOMAIN = "ln.bitcoinbeach.com"
+
 export const emailIsValid = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
 export const capitalize = (s) => {

@@ -236,10 +236,23 @@ export const SendBitcoinScreen: React.FC<SendBitcoinScreenProps> = ({
 
   useEffect(() => {
     reset()
-    const { valid, username } = validPayment(route.params?.payment, network, client)
+    const { valid, username, amount, memo, currency } = validPayment(
+      route.params?.payment,
+      network,
+      client,
+    )
     if (route.params?.username || username) {
       setInteractive(false)
       setDestination(route.params?.username || username)
+      if (currency === "USD") {
+        const sats = Math.floor(amount / satusd)
+        setInitAmount(sats)
+        setAmount(sats)
+      } else {
+        setInitAmount(amount)
+        setAmount(amount)
+      }
+      setMemo(memo)
     } else if (valid) {
       setInteractive(false)
       setDestination(route.params?.payment)
@@ -476,9 +489,9 @@ export const SendBitcoinScreen: React.FC<SendBitcoinScreenProps> = ({
     ReactNativeHapticFeedback.trigger(notificationType, optionsHaptic)
   }, [status])
 
-  const price = btc_price(client)
+  const satusd = btc_price(client)
 
-  const feeTextFormatted = textCurrencyFormatting(fee ?? 0, price, prefCurrency)
+  const feeTextFormatted = textCurrencyFormatting(fee ?? 0, satusd, prefCurrency)
 
   const feeText =
     fee === null && !usernameExists
@@ -486,7 +499,7 @@ export const SendBitcoinScreen: React.FC<SendBitcoinScreenProps> = ({
       : fee > 0 && !!amount
       ? `${feeTextFormatted}, ${translate("common.Total")}: ${textCurrencyFormatting(
           fee + amount,
-          price,
+          satusd,
           prefCurrency,
         )}`
       : fee === -1 || fee === undefined
@@ -498,7 +511,7 @@ export const SendBitcoinScreen: React.FC<SendBitcoinScreenProps> = ({
     invoiceError ||
     (!!totalAmount && balance && totalAmount > balance && status !== "success"
       ? translate("SendBitcoinScreen.totalExceed", {
-          balance: textCurrencyFormatting(balance, price, prefCurrency),
+          balance: textCurrencyFormatting(balance, satusd, prefCurrency),
         })
       : null)
 
@@ -517,7 +530,7 @@ export const SendBitcoinScreen: React.FC<SendBitcoinScreenProps> = ({
       amount={amount}
       goBack={goBack}
       pay={pay}
-      price={price}
+      satusd={satusd}
       fee={feeText}
       setMemo={setMemo}
       setDestination={setDestination}
@@ -549,7 +562,7 @@ type SendBitcoinScreenJSXProps = {
   amount: number
   goBack: () => void
   pay: () => void
-  price: string
+  satusd: number
   setMemo: (memo: string) => void
   setDestination: (destination: string) => void
   destination: string
@@ -578,7 +591,7 @@ export const SendBitcoinScreenJSX = ({
   amount,
   goBack,
   pay,
-  price,
+  satusd,
   setMemo,
   setDestination,
   destination,
@@ -611,7 +624,7 @@ export const SendBitcoinScreenJSX = ({
             setStatus("idle")
           }}
           forceKeyboard
-          price={price}
+          price={satusd}
         />
       </View>
       <View style={{ marginTop: 18 }}>
