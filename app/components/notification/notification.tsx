@@ -2,7 +2,7 @@ import { useApolloClient } from "@apollo/client"
 import { useIsAuthed } from "@app/graphql/is-authed-context"
 import { addDeviceToken, hasNotificationPermission } from "@app/utils/notifications"
 import messaging, { FirebaseMessagingTypes } from "@react-native-firebase/messaging"
-import { useEffect } from "react"
+import React, { useEffect } from "react"
 
 export const NotificationComponent = (): JSX.Element => {
   const client = useApolloClient()

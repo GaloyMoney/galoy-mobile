@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "module": "commonjs",
+      "paths": {
+        "@app/*": ["app/*"]
+      },
+      "baseUrl": "../",
+      "esModuleInterop": true,
+      "plugins": [
+        {
+          "transform": "ts-auto-mock/transformer",
+          "cacheBetweenTests": false,
+          "features": ["random"]
+        }
+      ],
+      "types": ["jest"],
+    },
+    "include": ["../app", "../utils/declaration.d.ts", "./"],
+  }
+  

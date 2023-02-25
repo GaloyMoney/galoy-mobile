@@ -17,6 +17,9 @@ if (process.env.E2E_DEVICE === "ios") {
     "appium:automationName": "XCUITest",
     "appium:snapshotMaxDepth": 500,
     "appium:autoGrantPermissions": true,
+    "appium:app":
+      process.env.TEST_APK_PATH ||
+      "./android/app/build/outputs/apk/debug/app-universal-debug.apk",
   }
 }
 
@@ -34,7 +37,7 @@ const baseSpec = {
     autoCompile: true,
     tsNodeOpts: {
       transpileOnly: true,
-      project: "tsconfig.jest.json",
+      project: "e2e/tsconfig.json",
     },
   },
 }
@@ -44,6 +47,4 @@ exports.baseSpec = baseSpec
 exports.config = {
   ...baseSpec,
   capabilities: [capabilities],
-
-  port: 4723,
 }

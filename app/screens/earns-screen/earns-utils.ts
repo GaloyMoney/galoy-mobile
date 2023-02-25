@@ -61,7 +61,6 @@ export const getQuizQuestionsContent = ({
   LL: TranslationFunctions
 }): QuizSectionContent[] => {
   const LLEarn = LL.EarnScreen.earnSections
-
   const quizSectionContent = (Object.keys(earnSections) as EarnSectionType[]).map(
     (sectionId) => ({
       section: {

@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "plugins": [
+        {
+          "transform": "ts-auto-mock/transformer",
+          "cacheBetweenTests": false,
+          "features": ["random"]
+        }
+      ],
+      "types": [
+        "node",
+        "@wdio/globals/types",
+        "@wdio/mocha-framework",
+        "@wdio/devtools-service"]
+    },
+    "include": ["../app", "../utils/declaration.d.ts", "./"]
+  }
+  
