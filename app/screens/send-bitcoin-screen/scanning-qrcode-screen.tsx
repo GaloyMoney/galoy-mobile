@@ -1,4 +1,3 @@
-import { useIsFocused } from "@react-navigation/native"
 import * as React from "react"
 import {
   Alert,
@@ -7,42 +6,53 @@ import {
   Platform,
   Pressable,
   StyleSheet,
+  Text,
   View,
 } from "react-native"
+import EStyleSheet from "react-native-extended-stylesheet"
+import ImagePicker from "react-native-image-crop-picker"
+import Reanimated from "react-native-reanimated"
+import Svg, { Circle } from "react-native-svg"
+import Icon from "react-native-vector-icons/Ionicons"
 import {
   Camera,
   CameraPermissionStatus,
   useCameraDevices,
 } from "react-native-vision-camera"
-import EStyleSheet from "react-native-extended-stylesheet"
-import Svg, { Circle } from "react-native-svg"
-import Icon from "react-native-vector-icons/Ionicons"
-import { Screen } from "../../components/screen"
-import { palette } from "../../theme/palette"
-import Reanimated from "react-native-reanimated"
-import { RootStackParamList } from "../../navigation/stack-param-lists"
-import { StackNavigationProp } from "@react-navigation/stack"
-import Clipboard from "@react-native-clipboard/clipboard"
-import { useI18nContext } from "@app/i18n/i18n-react"
 import RNQRGenerator from "rn-qr-generator"
 import { BarcodeFormat, useScanBarcodes } from "vision-camera-code-scanner"
-import ImagePicker from "react-native-image-crop-picker"
-import { lnurlDomains } from "./send-bitcoin-destination-screen"
-import crashlytics from "@react-native-firebase/crashlytics"
+
 import { gql } from "@apollo/client"
 import {
   useRealtimePriceQuery,
   useScanningQrCodeScreenQuery,
   useUserDefaultWalletIdLazyQuery,
 } from "@app/graphql/generated"
+import { useIsAuthed } from "@app/graphql/is-authed-context"
+import { useI18nContext } from "@app/i18n/i18n-react"
+import { testProps } from "@app/utils/testProps"
+import Clipboard from "@react-native-clipboard/clipboard"
+import crashlytics from "@react-native-firebase/crashlytics"
+import { useIsFocused } from "@react-navigation/native"
+import { StackNavigationProp } from "@react-navigation/stack"
+
+import { Screen } from "../../components/screen"
+import { RootStackParamList } from "../../navigation/stack-param-lists"
+import { palette } from "../../theme/palette"
 import { parseDestination } from "./payment-destination"
 import { DestinationDirection } from "./payment-destination/index.types"
-import { useIsAuthed } from "@app/graphql/is-authed-context"
+import { lnurlDomains } from "./send-bitcoin-destination-screen"
 
 const { width: screenWidth } = Dimensions.get("window")
-const { height: screenHeight } = Dimensions.get("window")
 
 const styles = EStyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "space-between",
+    marginTop: "5%",
+    marginBottom: "10%",
+  },
+
   close: {
     alignSelf: "flex-end",
     height: 64,
@@ -51,11 +61,17 @@ const styles = EStyleSheet.create({
     width: 64,
   },
 
-  openGallery: {
-    height: 128,
-    left: 32,
+  closeIcon: {
     position: "absolute",
-    top: screenHeight - 96,
+    top: -2,
+  },
+
+  openGallery: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingLeft: "5%",
+    paddingRight: "5%",
     width: screenWidth,
   },
 
@@ -70,12 +86,7 @@ const styles = EStyleSheet.create({
 
   rectangleContainer: {
     alignItems: "center",
-    bottom: 0,
     justifyContent: "center",
-    left: 0,
-    position: "absolute",
-    right: 0,
-    top: 0,
   },
 
   noPermissionsView: {
@@ -272,7 +283,7 @@ export const ScanningQRCodeScreen: React.FC<ScanningQRCodeScreenProps> = ({
 
   return (
     <Screen unsafe>
-      <View style={StyleSheet.absoluteFill}>
+      <View accessible={false} style={styles.container}>
         {device && (
           <Reanimated.View style={StyleSheet.absoluteFill}>
             <Camera
@@ -284,9 +295,6 @@ export const ScanningQRCodeScreen: React.FC<ScanningQRCodeScreenProps> = ({
             />
           </Reanimated.View>
         )}
-        <View style={styles.rectangleContainer}>
-          <View style={styles.rectangle} />
-        </View>
         <Pressable onPress={navigation.goBack}>
           <View style={styles.close}>
             <Svg viewBox="0 0 100 100">
@@ -295,13 +303,18 @@ export const ScanningQRCodeScreen: React.FC<ScanningQRCodeScreenProps> = ({
             <Icon
               name="ios-close"
               size={64}
-              // eslint-disable-next-line react-native/no-inline-styles
-              style={{ position: "absolute", top: -2 }}
+              style={styles.closeIcon}
+              {...testProps("close-camera-button")}
             />
           </View>
         </Pressable>
-        <View style={styles.openGallery}>
-          <Pressable onPress={showImagePicker}>
+
+        <View style={styles.rectangleContainer}>
+          <View style={styles.rectangle} />
+        </View>
+
+        <View accessible={false} style={styles.openGallery}>
+          <Pressable accessible={false} onPress={showImagePicker}>
             <Icon
               name="image"
               size={64}
@@ -312,13 +325,15 @@ export const ScanningQRCodeScreen: React.FC<ScanningQRCodeScreenProps> = ({
           </Pressable>
           <Pressable onPress={handleInvoicePaste}>
             {/* we could Paste from "FontAwesome" but as svg*/}
-            <Icon
-              name="ios-clipboard-outline"
-              size={64}
-              color={palette.lightGrey}
-              // eslint-disable-next-line react-native/no-inline-styles
-              style={{ opacity: 0.8, position: "absolute", bottom: "5%", right: "15%" }}
-            />
+            <Text {...testProps("paste-invoice-button")}>
+              <Icon
+                name="ios-clipboard-outline"
+                size={64}
+                color={palette.lightGrey}
+                // eslint-disable-next-line react-native/no-inline-styles
+                style={{ opacity: 0.8, position: "absolute", bottom: "5%", right: "15%" }}
+              />
+            </Text>
           </Pressable>
         </View>
       </View>
