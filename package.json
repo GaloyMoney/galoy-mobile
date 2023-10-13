@@ -202,7 +202,7 @@
     "babel-loader": "^9.1.2",
     "babel-plugin-module-resolver": "^5.0.0",
     "browserstack-local": "^1.5.1",
-    "cross-fetch": "^3.1.6",
+    "cross-fetch": "^4.0.0",
     "csv-parse": "^5.3.5",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",

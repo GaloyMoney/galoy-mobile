@@ -1,6 +1,6 @@
 PODS:
   - boost (1.76.0)
-  - BVLinearGradient (2.8.2):
+  - BVLinearGradient (2.6.2):
     - React-Core
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.71.8)
@@ -615,7 +615,7 @@ PODS:
     - React-RCTImage
   - RNSecureRandom (1.0.1):
     - React
-  - RNShare (9.2.3):
+  - RNShare (8.2.1):
     - React-Core
   - RNSVG (13.9.0):
     - React-Core
@@ -624,7 +624,7 @@ PODS:
   - vision-camera-code-scanner (0.2.0):
     - GoogleMLKit/BarcodeScanning
     - React-Core
-  - VisionCamera (2.15.6):
+  - VisionCamera (2.15.4):
     - React
     - React-callinvoker
     - React-Core
@@ -890,7 +890,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
-  BVLinearGradient: 916632041121a658c704df89d99f04acb038de0f
+  BVLinearGradient: 34a999fda29036898a09c6a6b728b0b4189e1a44
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: f637f31eacba90d4fdeff3fa41608b8f361c173b
   FBReactNativeSpec: 0d9a4f4de7ab614c49e98c00aedfd3bfbda33d59
@@ -984,11 +984,11 @@ SPEC CHECKSUMS:
   RNReanimated: f186e85d9f28c9383d05ca39e11dd194f59093ec
   RNScreens: 85d3880b52d34db7b8eeebe2f1a0e807c05e69fa
   RNSecureRandom: 07efbdf2cd99efe13497433668e54acd7df49fef
-  RNShare: da6d90b6dc332f51f86498041d6e34211f96b630
+  RNShare: eaee3dd5a06dad397c7d3b14762007035c5de405
   RNSVG: 53c661b76829783cdaf9b7a57258f3d3b4c28315
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
   vision-camera-code-scanner: dda884a7f3ec8243a2a6d6489b91860648371bca
-  VisionCamera: 523b49054bee9dace64189ab6631cb41e8b83fe0
+  VisionCamera: c6356b309f7b8e185b7be2e703ec67bb35acf345
   Yoga: 065f0b74dba4832d6e328238de46eb72c5de9556
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
