@@ -433,7 +433,7 @@ PODS:
     - React-Core
   - react-native-maps (1.4.0):
     - React-Core
-  - react-native-nfc-manager (3.14.8):
+  - react-native-nfc-manager (3.14.3):
     - React-Core
   - react-native-safe-area-context (4.5.0):
     - RCT-Folly
@@ -535,7 +535,7 @@ PODS:
     - React-perflogger (= 0.71.8)
   - RNBootSplash (4.6.0):
     - React-Core
-  - RNCAsyncStorage (1.19.3):
+  - RNCAsyncStorage (1.18.1):
     - React-Core
   - RNCClipboard (1.11.2):
     - React-Core
@@ -610,7 +610,7 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.25.0):
+  - RNScreens (3.20.0):
     - React-Core
     - React-RCTImage
   - RNSecureRandom (1.0.1):
@@ -944,7 +944,7 @@ SPEC CHECKSUMS:
   react-native-geetest-module: ed6a20774a7975640b79a2f639327c674a488cb5
   react-native-image-picker: ddbbe4d226d9c82a82360f5de66bf71a657a42e6
   react-native-maps: 7135a33610202745d08fdf151ce6b0d01952a99c
-  react-native-nfc-manager: 15a9dd22258cb8e1a6bbb71179baf5c9137a933d
+  react-native-nfc-manager: ad9d5ea54abf165a42a2c87292556aeb385d9ed1
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
   react-native-secure-key-store: 910e6df6bc33cb790aba6ee24bc7818df1fe5898
   react-native-slider: 33b8d190b59d4f67a541061bb91775d53d617d9d
@@ -964,7 +964,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 7c51ae9d4b3e9608a2366e39ccaa606aa551b9ed
   ReactCommon: 85c98ab0a509e70bf5ee5d9715cf68dbf495b84c
   RNBootSplash: 91e0c16bfc96703cb5b0562785b9a8cbfeb298fe
-  RNCAsyncStorage: c913ede1fa163a71cea118ed4670bbaaa4b511bb
+  RNCAsyncStorage: b90b71f45b8b97be43bc4284e71a6af48ac9f547
   RNCClipboard: 3f0451a8100393908bea5c5c5b16f96d45f30bfc
   RNDateTimePicker: 65e1d202799460b286ff5e741d8baf54695e8abd
   RNDeviceInfo: 475a4c447168d0ad4c807e48ef5e0963a0f4eb1b
@@ -982,7 +982,7 @@ SPEC CHECKSUMS:
   RNRate: ef3bcff84f39bb1d1e41c5593d3eea4aab2bd73a
   RNReactNativeHapticFeedback: afa5bf2794aecbb2dba2525329253da0d66656df
   RNReanimated: f186e85d9f28c9383d05ca39e11dd194f59093ec
-  RNScreens: 85d3880b52d34db7b8eeebe2f1a0e807c05e69fa
+  RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   RNSecureRandom: 07efbdf2cd99efe13497433668e54acd7df49fef
   RNShare: da6d90b6dc332f51f86498041d6e34211f96b630
   RNSVG: 53c661b76829783cdaf9b7a57258f3d3b4c28315
