@@ -80,16 +80,14 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NFCReaderUsageDescription</key>
+	<string>We need to use NFC to receive payments from the card</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-		</dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Activate your camera to scan QR codes</string>
@@ -99,8 +97,6 @@
 	<string>Find Merchant who accepts Lightning payments</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Import a screenshot with a QR code</string>
-	<key>NFCReaderUsageDescription</key>
-	<string>We need to use NFC to receive payments from the card</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ionicons.ttf</string>
