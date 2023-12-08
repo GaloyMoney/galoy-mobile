@@ -7,6 +7,7 @@ const en: BaseTranslation = {
     title: "Receive payment by using:",
     buttonTitle: "Set your address",
     yourAddress: "Your {bankName: string} address",
+    yourLightningAddress: "Your Lightning address",
     notAbleToChange:
       "You won't be able to change your {bankName: string} address after it's set.",
     addressNotAvailable: "This {bankName: string} address is already taken.",
@@ -15,6 +16,7 @@ const en: BaseTranslation = {
     yourCashRegister: "Your Lightning Cash Register",
     yourPaycode: "Your Paycode",
     copiedAddressToClipboard: "Copied {bankName: string} address to clipboard",
+    copiedLightningAddressToClipboard: "Copied Lightning address to clipboard",
     copiedPaycodeToClipboard: "Copied Paycode to clipboard",
     copiedCashRegisterLinkToClipboard: "Copied Cash Register Link to clipboard",
     howToUseIt: "How to use it?",
@@ -2298,6 +2300,12 @@ const en: BaseTranslation = {
     pendingPayment: "The payment has been sent, but hasn't confirmed yet.\n\nIt's possible the payment will not confirm, in which case the funds will be returned to your account.",
   },
   SettingsScreen: {
+    setByOs: "Set by OS",
+    pos: "Point of Sale",
+    posCopied: "Your point of sale link has been copied",
+    yourAddress: "Your {bankName: string} Address",
+    setYourAddress: "Set Your {bankName: string} Address",
+    setYourLightningAddress: "Set Your Lightning Address",
     activated: "Activated",
     addressScreen: "Ways to get paid",
     tapUserName: "Tap to set username",
@@ -2340,6 +2348,15 @@ const en: BaseTranslation = {
     }
   },
   AccountScreen: {
+    fundsMoreThan5Dollars: "Your account has more than $5",
+    itsATrialAccount: "Trial accounts have reduced transaction limits and no recovery method. If you lose your phone or uninstall the app, your funds will be unrecoverable.",
+    accountBeingDeleted: "Your account is being deleted, please wait...",
+    dangerZone: "Danger Zone",
+    phoneDeletedSuccessfully: "Phone deleted successfully",
+    phoneNumber: "Phone Number",
+    tapToAddPhoneNumber: "Tap to add phone number",
+    loginMethods: "Login Methods",
+    level: "Level {level: string}",
     accountLevel: "Account Level",
     upgrade: "Upgrade your account",
     logOutAndDeleteLocalData: "Log out and clear all local data",
@@ -2355,6 +2372,11 @@ const en: BaseTranslation = {
     btcBalanceWarning: "You have a bitcoin balance of {balance: string}.",
     secureYourAccount: "Register to secure your account",
     tapToAdd: "Tap to add",
+    tapToAddEmail: "Tap to add email",
+    unverifiedEmail: "Email (Unverified)",
+    email: "Email",
+    emailDeletedSuccessfully: "Email deleted successfully",
+    unverifiedEmailAdvice: "Unverified emails can't be used to login. You should re-verify your email address.",
     deleteEmailPromptTitle: "Delete email",
     deleteEmailPromptContent:
       "Are you sure you want to delete your email address? you will only be able to log back in with your phone number.",
@@ -2380,6 +2402,7 @@ const en: BaseTranslation = {
       "Are you sure you want to delete your two-factor authentication?",
     copiedAccountId: "Copied your account ID to clipboard",
     yourAccountId: "Your Account ID",
+    accountId: "Account ID",
     copy: "Copy"
   },
   TotpRegistrationInitiateScreen: {
@@ -2415,6 +2438,8 @@ const en: BaseTranslation = {
     system: "Use System setting",
     light: "Use Light Mode",
     dark: "Use Dark Mode",
+    setToDark: "Dark Mode",
+    setToLight: "Light Mode",
   },
   Languages: {
     DEFAULT: "Default (OS)",
@@ -2475,6 +2500,7 @@ const en: BaseTranslation = {
   },
   SetAddressModal: {
     title: "Set {bankName: string} address",
+    setLightningAddress: "Set Lightning address",
     Errors: {
       tooShort: "Address must be at least 3 characters long",
       tooLong: "Address must be at most 50 characters long",
@@ -2569,7 +2595,15 @@ const en: BaseTranslation = {
     success: "Email {email: string} confirmed successfully",
   },
   common: {
+    enabled: "Enabled",
+    notifications: "Notifications",
+    preferences: "Preferences",
+    securityAndPrivacy: "Security and Privacy",
+    advanced: "Advanced",
+    community: "Community",
     account: "Account",
+    trialAccount: "Trial Account",
+    blinkUser: "Blink User",
     transactionLimits: "Transaction Limits",
     activateWallet: "Activate Wallet",
     amountRequired: "Amount is required",

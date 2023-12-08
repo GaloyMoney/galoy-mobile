@@ -8,13 +8,19 @@ import {
   scrollDown,
   selector,
   setUserToken,
+  sleep,
   timeout,
-  waitTillSettingDisplayed,
+  waitTillTextDisplayed,
 } from "./utils"
 
 export const getAccessTokenFromClipboard = async (LL: TranslationFunctions) => {
   await clickIcon("menu")
-  await waitTillSettingDisplayed(LL.common.account())
+
+  if (process.env.E2E_DEVICE === "ios") {
+    await waitTillTextDisplayed(LL.common.preferences())
+  } else {
+    await sleep(1000)
+  }
 
   await scrollDown()
 

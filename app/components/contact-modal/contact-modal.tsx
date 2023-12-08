@@ -108,8 +108,8 @@ const ContactModal: React.FC<Props> = ({
   return (
     <ReactNativeModal
       isVisible={isVisible}
-      backdropOpacity={0.3}
-      backdropColor={colors.grey3}
+      backdropOpacity={0.8}
+      backdropColor={colors.white}
       onBackdropPress={toggleModal}
       style={styles.modal}
     >
@@ -148,7 +148,7 @@ const useStyles = makeStyles(({ colors }) => ({
     marginHorizontal: 0,
   },
   listItemContainer: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.grey5,
   },
   listItemTitle: {
     color: colors.black,

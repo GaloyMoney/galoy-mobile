@@ -781,6 +781,45 @@ query ContactsCard {
   }
 }
 
+query ExportCsvSetting($walletIds: [WalletId!]!) {
+  me {
+    id
+    defaultAccount {
+      id
+      csvTransactions(walletIds: $walletIds)
+      __typename
+    }
+    __typename
+  }
+}
+
+query SettingsScreen {
+  me {
+    id
+    username
+    language
+    defaultAccount {
+      id
+      defaultWalletId
+      wallets {
+        id
+        balance
+        walletCurrency
+        __typename
+      }
+      __typename
+    }
+    totpEnabled
+    phone
+    email {
+      address
+      verified
+      __typename
+    }
+    __typename
+  }
+}
+
 query accountDefaultWallet($walletCurrency: WalletCurrency, $username: Username!) {
   accountDefaultWallet(walletCurrency: $walletCurrency, username: $username) {
     id
@@ -812,31 +851,6 @@ query accountLimits {
           interval
           __typename
         }
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-}
-
-query accountScreen {
-  me {
-    id
-    phone
-    totpEnabled
-    email {
-      address
-      verified
-      __typename
-    }
-    defaultAccount {
-      id
-      level
-      wallets {
-        id
-        balance
-        walletCurrency
         __typename
       }
       __typename
@@ -1437,27 +1451,6 @@ query setDefaultWalletScreen {
   }
 }
 
-query settingsScreen {
-  me {
-    id
-    phone
-    username
-    language
-    defaultAccount {
-      id
-      defaultWalletId
-      wallets {
-        id
-        balance
-        walletCurrency
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-}
-
 query supportedCountries {
   globals {
     supportedCountries {
@@ -1504,18 +1497,6 @@ query transactionListForDefaultAccount($first: Int, $after: String, $last: Int, 
         ...TransactionList
         __typename
       }
-      __typename
-    }
-    __typename
-  }
-}
-
-query walletCSVTransactions($walletIds: [WalletId!]!) {
-  me {
-    id
-    defaultAccount {
-      id
-      csvTransactions(walletIds: $walletIds)
       __typename
     }
     __typename

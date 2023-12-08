@@ -30,7 +30,7 @@ export const PeopleTabIcon: React.FC<TabIconProps> = ({ color, focused }) => {
   useEffect(() => {
     const innerCircleCachedValue = cachedData?.innerCircleValue || -1
     const innerCircleRealValue =
-      networkData?.me?.defaultAccount.welcomeProfile?.innerCircleAllTimeCount || -1
+      networkData?.me?.defaultAccount?.welcomeProfile?.innerCircleAllTimeCount || -1
 
     if (innerCircleCachedValue === -1 && innerCircleRealValue === -1) {
       setHidden(false)

@@ -15,53 +15,53 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## Android
 
-### android test
-
-```sh
-[bundle exec] fastlane android test
-```
-
-Runs all the tests
-
 ### android build
 
 ```sh
 [bundle exec] fastlane android build
 ```
 
-Build a new version of the app
+Build Releasable APK
 
-### android beta
-
-```sh
-[bundle exec] fastlane android beta
-```
-
-Deploy a new version to both Play Store and Huawei Store
-
-### android play_store_release
+### android play_store_upload
 
 ```sh
-[bundle exec] fastlane android play_store_release
+[bundle exec] fastlane android play_store_upload
 ```
 
 Deploy a new version to the Google Play
 
-### android huawei_release
+### android huawei_store_upload
 
 ```sh
-[bundle exec] fastlane android huawei_release
+[bundle exec] fastlane android huawei_store_upload
 ```
 
-Deploy a new version to Huawei App Gallery
+Deploy the new version to Huawei App Gallery
 
-### android browserstack
+### android promote_to_beta
 
 ```sh
-[bundle exec] fastlane android browserstack
+[bundle exec] fastlane android promote_to_beta
 ```
 
-End to end testing on browserstack
+Promote Internal Testing build to Beta
+
+### android promote_to_public
+
+```sh
+[bundle exec] fastlane android promote_to_public
+```
+
+Promote Internal Testing build to Public
+
+### android public_phased_percent
+
+```sh
+[bundle exec] fastlane android public_phased_percent
+```
+
+Phased Public Rollout
 
 ### android build_e2e
 
@@ -70,6 +70,14 @@ End to end testing on browserstack
 ```
 
 Build for end to end testing
+
+### android browserstack
+
+```sh
+[bundle exec] fastlane android browserstack
+```
+
+End to end testing on browserstack
 
 ----
 
