@@ -1,7 +1,5 @@
 extend type Transaction {
   date: String!
-  date_format: String!
-  date_nice_print: String!
   isReceive: Boolean!
   text: String!
 }
