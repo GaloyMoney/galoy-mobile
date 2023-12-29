@@ -1,7 +1,4 @@
 import { createPaymentRequestCreationData } from "@app/screens/receive-bitcoin-screen/payment/payment-request-creation-data"
-
-import { createMock } from "ts-auto-mock"
-import { LnInvoice } from "@app/graphql/generated"
 import {
   GeneratePaymentRequestMutations,
   Invoice,
@@ -11,6 +8,7 @@ import { btcWalletDescriptor, defaultParams, usdWalletDescriptor } from "./helpe
 import { createPaymentRequest } from "@app/screens/receive-bitcoin-screen/payment/payment-request"
 import { toUsdMoneyAmount } from "@app/types/amounts"
 
+// Invoice strings
 const usdAmountInvoice =
   "lnbc49100n1p3l2q6cpp5y8lc3dv7qnplxhc3z9j0sap4n0hu99g39tl3srx6zj0hrqy2snwsdqqcqzpuxqzfvsp5q6t5f3xeruu4k5sk5nlmxx2kzlw2pydmmjk9g4qqmsc9c6ffzldq9qyyssq9lesnumasvvlvwc7yckvuepklttlvwhjqw3539qqqttsyh5s5j246spy9gezng7ng3d40qsrn6dhsrgs7rccaftzulx5auqqd5lz0psqfskeg4"
 const noAmountInvoice =
@@ -19,62 +17,93 @@ const btcAmountInvoice =
   "lnbc23690n1p3l2qugpp5jeflfqjpxhe0hg3tzttc325j5l6czs9vq9zqx5edpt0yf7k6cypsdqqcqzpuxqyz5vqsp5lteanmnwddszwut839etrgjenfr3dv5tnvz2d2ww2mvggq7zn46q9qyyssqzcz0rvt7r30q7jul79xqqwpr4k2e8mgd23fkjm422sdgpndwql93d4wh3lap9yfwahue9n7ju80ynkqly0lrqqd2978dr8srkrlrjvcq2v5s6k"
 const mockOnChainAddress = "tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx"
 
-const mockLnInvoice = createMock<LnInvoice>({
+// Manually created mock objects
+const mockLnInvoice = {
+  __typename: "LnInvoice",
   paymentRequest: btcAmountInvoice,
-})
+  // Add other necessary properties here
+}
 
-const mockLnInvoiceCreate = jest.fn().mockResolvedValue({
-  data: {
-    lnInvoiceCreate: {
-      invoice: mockLnInvoice,
-      errors: [],
-    },
-  },
-  errors: [],
-})
-
-const mockLnUsdInvoice = createMock<LnInvoice>({
+const mockLnUsdInvoice = {
+  __typename: "LnInvoice",
   paymentRequest: usdAmountInvoice,
-})
+  // Add other necessary properties here
+}
 
-const mockLnUsdInvoiceCreate = jest.fn().mockResolvedValue({
-  data: {
-    lnUsdInvoiceCreate: {
-      invoice: mockLnUsdInvoice,
-      errors: [],
-    },
-  },
-  errors: [],
-})
-
-const mockLnNoAmountInvoice = createMock<LnInvoice>({
+const mockLnNoAmountInvoice = {
+  __typename: "LnInvoice",
   paymentRequest: noAmountInvoice,
-})
+  // Add other necessary properties here
+}
 
-const mockLnNoAmountInvoiceCreate = jest.fn().mockResolvedValue({
-  data: {
-    lnNoAmountInvoiceCreate: {
-      invoice: mockLnNoAmountInvoice,
-      errors: [],
+const mockLnInvoiceCreate = jest.fn(() =>
+  Promise.resolve({
+    data: {
+      __typename: "Mutation", // Correct placement according to your schema
+      lnInvoiceCreate: {
+        __typename: "LnInvoicePayload",
+        invoice: mockLnInvoice,
+        errors: [],
+      },
     },
-  },
-  errors: [],
-})
+    errors: [],
+  }),
+)
 
-const mockOnChainAddressCurrent = jest.fn().mockResolvedValue({
-  data: {
-    onChainAddressCurrent: {
-      address: mockOnChainAddress,
-      errors: [],
+const mockLnUsdInvoiceCreate = jest.fn(() =>
+  Promise.resolve({
+    data: {
+      __typename: "Mutation", // Correct placement according to your schema
+      lnUsdInvoiceCreate: {
+        __typename: "LnInvoicePayload",
+        invoice: mockLnUsdInvoice,
+        errors: [],
+      },
     },
-  },
-  errors: [],
-})
+    errors: [],
+  }),
+)
+
+const mockLnNoAmountInvoiceCreate = jest.fn(() =>
+  Promise.resolve({
+    data: {
+      __typename: "Mutation", // Correct placement according to your schema
+      lnNoAmountInvoiceCreate: {
+        __typename: "LnNoAmountInvoicePayload",
+        invoice: mockLnNoAmountInvoice,
+        errors: [],
+      },
+    },
+    errors: [],
+  }),
+)
+
+const mockOnChainAddressCurrent = jest.fn(() =>
+  Promise.resolve({
+    data: {
+      __typename: "Mutation", // Correct placement according to your schema
+      onChainAddressCurrent: {
+        __typename: "OnChainAddressPayload",
+        address: mockOnChainAddress,
+        errors: [],
+      },
+    },
+    errors: [],
+  }),
+)
 
 export const mutations: GeneratePaymentRequestMutations = {
+  // eslint-disable-next-line
+  // @ts-ignore
   lnInvoiceCreate: mockLnInvoiceCreate,
+  // eslint-disable-next-line
+  // @ts-ignore
   lnUsdInvoiceCreate: mockLnUsdInvoiceCreate,
+  // eslint-disable-next-line
+  // @ts-ignore
   lnNoAmountInvoiceCreate: mockLnNoAmountInvoiceCreate,
+  // eslint-disable-next-line
+  // @ts-ignore
   onChainAddressCurrent: mockOnChainAddressCurrent,
 }
 

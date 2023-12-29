@@ -7,13 +7,6 @@
     "paths": {
       "@app/*": ["app/*"]
     },
-    "plugins": [
-      {
-        "transform": "ts-auto-mock/transformer",
-        "cacheBetweenTests": false,
-        "features": ["random"]
-      }
-    ],
     "types": ["node", "react-native", "@wdio/globals/types", "@wdio/mocha-framework", "@wdio/devtools-service", "@types/jest"],
   },
   "exclude": ["**/*.stories.tsx"],

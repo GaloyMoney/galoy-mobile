@@ -1,10 +1,17 @@
-import * as React from "react"
 import { render } from "@testing-library/react-native"
-import { createMock } from "ts-auto-mock"
+import * as React from "react"
 
 import { TransactionDate } from "../../app/components/transaction-date"
+import {
+  Transaction,
+  TxDirection,
+  TxStatus,
+  WalletCurrency,
+  InitiationVia,
+  SettlementVia,
+  PriceOfOneSettlementMinorUnitInDisplayMinorUnit,
+} from "../../app/graphql/generated"
 import { i18nObject } from "../../app/i18n/i18n-util"
-import { Transaction } from "../../app/graphql/generated"
 
 jest.mock("@app/i18n/i18n-react", () => ({
   useI18nContext: () => {
@@ -12,9 +19,34 @@ jest.mock("@app/i18n/i18n-react", () => ({
   },
 }))
 
+// Assuming TxDirection, InitiationVia, WalletCurrency, SettlementVia, TxStatus are enums or specific string types
+const createMockTransaction = (
+  partialTransaction: Partial<Transaction>,
+): Transaction => ({
+  __typename: "Transaction",
+  createdAt: new Date().getTime(),
+  date: "mockDate",
+  direction: TxDirection.Receive, // Replace with a valid value from TxDirection
+  id: "mockId",
+  initiationVia: "InitiationVia" as unknown as InitiationVia,
+  isReceive: false,
+  memo: "mockMemo",
+  settlementAmount: 0, // Replace with a valid number
+  settlementCurrency: WalletCurrency.Btc, // Replace with a valid value from WalletCurrency
+  settlementDisplayAmount: "mockSettlementDisplayAmount",
+  settlementDisplayCurrency: "mockSettlementDisplayCurrency",
+  settlementDisplayFee: "mockSettlementDisplayFee",
+  settlementFee: 0, // Replace with a valid number
+  settlementPrice: "price" as unknown as PriceOfOneSettlementMinorUnitInDisplayMinorUnit, // Replace with a valid object of type PriceOfOneSettlementMinorUnitInDisplayMinorUnit
+  settlementVia: "SettlementVia" as unknown as SettlementVia, // Replace with a valid value from SettlementVia
+  status: TxStatus.Failure, // Replace with a valid value from TxStatus
+  text: "mockText",
+  ...partialTransaction,
+})
+
 describe("Display the createdAt date for a transaction", () => {
   it("Displays pending for a pending onchain transaction", () => {
-    const mockedTransaction = createMock<Transaction>({
+    const mockedTransaction = createMockTransaction({
       status: "PENDING",
       createdAt: new Date().getDate(),
     })
@@ -27,10 +59,11 @@ describe("Display the createdAt date for a transaction", () => {
     )
     expect(queryAllByText("pending")).not.toBeNull()
   })
+
   it("Displays friendly date", () => {
     const testTransactionCreatedAtDate = new Date()
     testTransactionCreatedAtDate.setDate(testTransactionCreatedAtDate.getDate() - 1)
-    const mockedTransaction = createMock<Transaction>({
+    const mockedTransaction = createMockTransaction({
       createdAt: Math.floor(testTransactionCreatedAtDate.getTime() / 1000),
     })
 

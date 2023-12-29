@@ -1713,8 +1713,6 @@ export type Transaction = {
   readonly __typename: 'Transaction';
   readonly createdAt: Scalars['Timestamp']['output'];
   readonly date: Scalars['String']['output'];
-  readonly date_format: Scalars['String']['output'];
-  readonly date_nice_print: Scalars['String']['output'];
   readonly direction: TxDirection;
   readonly id: Scalars['ID']['output'];
   /** From which protocol the payment has been initiated. */
@@ -8249,8 +8247,6 @@ export interface TotpSecretScalarConfig extends GraphQLScalarTypeConfig<Resolver
 export type TransactionResolvers<ContextType = any, ParentType extends ResolversParentTypes['Transaction'] = ResolversParentTypes['Transaction']> = {
   createdAt?: Resolver<ResolversTypes['Timestamp'], ParentType, ContextType>;
   date?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  date_format?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  date_nice_print?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   direction?: Resolver<ResolversTypes['TxDirection'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   initiationVia?: Resolver<ResolversTypes['InitiationVia'], ParentType, ContextType>;
