@@ -150,7 +150,7 @@ describe("Username Payment Flow", () => {
       await browser.pause(1000)
       await clickButton(LL.AuthenticationScreen.skip())
     } catch {
-      /* empty */
+      // Sometimes the suggestion box is not displayed so it's okay to ignore
     }
   })
 })

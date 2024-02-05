@@ -55,15 +55,23 @@ export const TotpSetting: React.FC = () => {
           text: LL.common.ok(),
           onPress: async () => {
             setSpinner(true)
-            const res = await totpDeleteMutation()
-            await refetchTotpSettings()
-            setSpinner(false)
 
-            if (res.data?.userTotpDelete?.me?.totpEnabled === false) {
-              Alert.alert(LL.AccountScreen.totpDeactivated())
-            } else {
-              console.log(res.data?.userTotpDelete.errors)
-              Alert.alert(LL.common.error(), res.data?.userTotpDelete?.errors[0]?.message)
+            try {
+              const res = await totpDeleteMutation()
+              await refetchTotpSettings()
+              setSpinner(false)
+
+              if (res.data?.userTotpDelete?.me?.totpEnabled === false) {
+                Alert.alert(LL.AccountScreen.totpDeactivated())
+              } else {
+                console.log(res.data?.userTotpDelete.errors)
+                Alert.alert(
+                  LL.common.error(),
+                  res.data?.userTotpDelete?.errors[0]?.message,
+                )
+              }
+            } catch {
+              Alert.alert(LL.common.error())
             }
           },
         },
