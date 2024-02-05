@@ -54,7 +54,8 @@
     "bundle-visualizer": "yarn run react-native-bundle-visualizer",
     "splash": "yarn react-native generate-bootsplash --background-color \"#000\" --logo-width 300 app/assets/logo/app-logo-dark.svg",
     "e2e:build": "detox build --configuration",
-    "e2e:test": "detox test --configuration"
+    "e2e:test": "detox test --configuration",
+    "find-unused-ll-keys": "yarn node utils/find-unused-ll-keys.js"
   },
   "dependencies": {
     "@apollo/client": "^3.9.6",

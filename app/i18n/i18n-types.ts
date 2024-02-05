@@ -46,11 +46,6 @@ type RootTranslation = {
 		 */
 		buttonTitle: string
 		/**
-		 * Y​o​u​r​ ​{​b​a​n​k​N​a​m​e​}​ ​a​d​d​r​e​s​s
-		 * @param {string} bankName
-		 */
-		yourAddress: RequiredParams<'bankName'>
-		/**
 		 * Y​o​u​r​ ​L​i​g​h​t​n​i​n​g​ ​a​d​d​r​e​s​s
 		 */
 		yourLightningAddress: string
@@ -80,11 +75,6 @@ type RootTranslation = {
 		 * Y​o​u​r​ ​P​a​y​c​o​d​e
 		 */
 		yourPaycode: string
-		/**
-		 * C​o​p​i​e​d​ ​{​b​a​n​k​N​a​m​e​}​ ​a​d​d​r​e​s​s​ ​t​o​ ​c​l​i​p​b​o​a​r​d
-		 * @param {string} bankName
-		 */
-		copiedAddressToClipboard: RequiredParams<'bankName'>
 		/**
 		 * C​o​p​i​e​d​ ​L​i​g​h​t​n​i​n​g​ ​a​d​d​r​e​s​s​ ​t​o​ ​c​l​i​p​b​o​a​r​d
 		 */
@@ -7179,16 +7169,6 @@ type RootTranslation = {
 		 */
 		posCopied: string
 		/**
-		 * Y​o​u​r​ ​{​b​a​n​k​N​a​m​e​}​ ​A​d​d​r​e​s​s
-		 * @param {string} bankName
-		 */
-		yourAddress: RequiredParams<'bankName'>
-		/**
-		 * S​e​t​ ​Y​o​u​r​ ​{​b​a​n​k​N​a​m​e​}​ ​A​d​d​r​e​s​s
-		 * @param {string} bankName
-		 */
-		setYourAddress: RequiredParams<'bankName'>
-		/**
 		 * S​e​t​ ​Y​o​u​r​ ​L​i​g​h​t​n​i​n​g​ ​A​d​d​r​e​s​s
 		 */
 		setYourLightningAddress: string
@@ -9045,10 +9025,6 @@ export type TranslationFunctions = {
 		 */
 		buttonTitle: () => LocalizedString
 		/**
-		 * Your {bankName} address
-		 */
-		yourAddress: (arg: { bankName: string }) => LocalizedString
-		/**
 		 * Your Lightning address
 		 */
 		yourLightningAddress: () => LocalizedString
@@ -9076,10 +9052,6 @@ export type TranslationFunctions = {
 		 * Your Paycode
 		 */
 		yourPaycode: () => LocalizedString
-		/**
-		 * Copied {bankName} address to clipboard
-		 */
-		copiedAddressToClipboard: (arg: { bankName: string }) => LocalizedString
 		/**
 		 * Copied Lightning address to clipboard
 		 */
@@ -16135,14 +16107,6 @@ export type TranslationFunctions = {
 		 * Your point of sale link has been copied
 		 */
 		posCopied: () => LocalizedString
-		/**
-		 * Your {bankName} Address
-		 */
-		yourAddress: (arg: { bankName: string }) => LocalizedString
-		/**
-		 * Set Your {bankName} Address
-		 */
-		setYourAddress: (arg: { bankName: string }) => LocalizedString
 		/**
 		 * Set Your Lightning Address
 		 */
