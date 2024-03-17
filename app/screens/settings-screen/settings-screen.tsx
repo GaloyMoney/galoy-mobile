@@ -3,11 +3,12 @@ import { ScrollView } from "react-native-gesture-handler"
 import { gql } from "@apollo/client"
 import { Screen } from "@app/components/screen"
 import { VersionComponent } from "@app/components/version"
+import { AccountLevel, useLevel } from "@app/graphql/level-context"
 import { useI18nContext } from "@app/i18n/i18n-react"
 import { makeStyles } from "@rneui/themed"
 
+import { AccountBanner } from "./account/banner"
 import { SettingsGroup } from "./group"
-import { AccountBanner } from "./settings/account-banner"
 import { DefaultWallet } from "./settings/account-default-wallet"
 import { AccountLevelSetting } from "./settings/account-level"
 import { AccountLNAddress } from "./settings/account-ln-address"
@@ -55,6 +56,8 @@ export const SettingsScreen: React.FC = () => {
   const styles = useStyles()
   const { LL } = useI18nContext()
 
+  const { currentLevel } = useLevel()
+
   const items = {
     account: [AccountLevelSetting, TxLimits, AccountLNAddress, AccountPOS],
     preferences: [
@@ -72,7 +75,7 @@ export const SettingsScreen: React.FC = () => {
   return (
     <Screen keyboardShouldPersistTaps="handled">
       <ScrollView contentContainerStyle={styles.outer}>
-        <AccountBanner />
+        {currentLevel === AccountLevel.NonAuth && <AccountBanner />}
         <SettingsGroup name={LL.common.account()} items={items.account} />
         <SettingsGroup name={LL.common.preferences()} items={items.preferences} />
         <SettingsGroup
@@ -89,7 +92,7 @@ export const SettingsScreen: React.FC = () => {
 
 const useStyles = makeStyles(() => ({
   outer: {
-    marginTop: 4,
+    marginTop: 12,
     paddingHorizontal: 12,
     paddingBottom: 20,
     display: "flex",

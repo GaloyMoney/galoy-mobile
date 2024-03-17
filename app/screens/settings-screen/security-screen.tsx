@@ -20,8 +20,6 @@ import BiometricWrapper from "../../utils/biometricAuthentication"
 import { PinScreenPurpose } from "../../utils/enum"
 import KeyStoreWrapper from "../../utils/storage/secureStorage"
 import { toastShow } from "../../utils/toast"
-import { SettingsGroup } from "./group"
-import { TotpSetting } from "./totp"
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -145,7 +143,6 @@ export const SecurityScreen: React.FC<Props> = ({ route, navigation }) => {
 
   return (
     <Screen style={styles.container} preset="scroll">
-      <SettingsGroup items={[TotpSetting]} />
       <View style={styles.settingContainer}>
         <View style={styles.textContainer}>
           <Text type="h1">{LL.SecurityScreen.biometricTitle()}</Text>
@@ -177,7 +174,6 @@ export const SecurityScreen: React.FC<Props> = ({ route, navigation }) => {
         />
       </View>
       <View style={styles.settingContainer}>
-        <View style={styles.settingContainer}></View>
         <View style={styles.textContainer}>
           <Text type="h1">{LL.SecurityScreen.hideBalanceTitle()}</Text>
           <Text type="p2">{LL.SecurityScreen.hideBalanceDescription()}</Text>

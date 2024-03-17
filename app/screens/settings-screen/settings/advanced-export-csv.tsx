@@ -49,8 +49,8 @@ export const ExportCsvSetting: React.FC = () => {
     const csvEncoded = data?.me?.defaultAccount?.csvTransactions
     try {
       await Share.open({
-        title: "export-wallet.csv", // what is used for android
-        filename: "export-wallet.csv", // what is used for ios
+        title: "blink-transactions",
+        filename: "blink-transactions",
         url: `data:text/comma-separated-values;base64,${csvEncoded}`,
         type: "text/comma-separated-values",
       })

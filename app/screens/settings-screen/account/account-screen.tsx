@@ -8,7 +8,7 @@ import { makeStyles } from "@rneui/themed"
 import { SettingsGroup } from "../group"
 import { TotpSetting } from "../totp"
 import { AccountDeleteContextProvider } from "./account-delete-context"
-import { AccountHeader } from "./header"
+import { AccountBanner } from "./banner"
 import { AccountId } from "./id"
 import { DangerZoneSettings } from "./settings/danger-zone"
 import { EmailSetting } from "./settings/email"
@@ -26,7 +26,7 @@ export const AccountScreen: React.FC = () => {
     <AccountDeleteContextProvider>
       <Screen keyboardShouldPersistTaps="handled">
         <ScrollView contentContainerStyle={styles.outer}>
-          <AccountHeader />
+          <AccountBanner />
           <AccountId />
           <UpgradeTrialAccount />
           {isAtLeastLevelOne && (
