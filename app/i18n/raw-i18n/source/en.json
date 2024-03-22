@@ -302,7 +302,7 @@
                             "Not quite. Although the design of papers bills may change, this has nothing to do with their value."
                         ],
                         "question": "What happens to the value of all fiat money over time?",
-                        "text": "That is correct. \n\nIn the history of the world, there have been 775 fiat currencies created. Most no longer exist, and the average life for any fiat money is only 27 years.\n\nThe British Pound is the oldest fiat currency. It has lost more than 99% of its value since 1694. \n\nThere is no precedent for any fiat money maintaining its value over time. This is inflation. \nIt is effectively a form of theft of your own hard earned money !",
+                        "text": "That is correct. \n\nIn the history of the world, there have been 775 fiat currencies created. Most no longer exist, and the average life for any fiat money is only 27 years.\n\nThe British Pound It is the oldest currency which still exists today. It has lost more than 99% of its value since 1694. \n\nThere is no precedent for any fiat money maintaining its value over time. This is inflation. \nIt is effectively a form of theft of your own hard earned money !",
                         "title": "Does this mean that all fiat money loses value over time?"
                     },
                     "OtherIssues": {
@@ -394,7 +394,7 @@
                         "feedback": [
                             "Correct. In fact, the Bitcoin network has never once been hacked. Answer the next question to learn more!",
                             "Nice try, but wrong. The bitcoin network is safe and secure — 24 hours a day, 365 days a year.",
-                            "Icorrect. Although bitcoin is indeed “open source” software — or available to the public for free — is still extremely secure."
+                            "Incorrect. Although bitcoin is indeed “open source” software — or available to the public for free — is still extremely secure."
                         ],
                         "question": "Is the Bitcoin network secure?",
                         "text": "The bitcoin network is worth well over $100 billion today. Accordingly, the network must be very secure — so that money is never stolen. \n\nBitcoin is known as the world’s first cryptocurrency. \n\nThe “crypto” part of the name comes from cryptography. Simply put, cryptography protects information through very complex math functions. \n\nMost people do not realize — but Bitcoin is actually the most secure computer network in the world ! \n\n(you may have heard about bitcoin “hacks” — which we will debunk in the next quiz)",
@@ -523,7 +523,7 @@
                         ],
                         "feedback": [
                             "You got it right. The network that secures the currency is an important factor in determining its durability, especially for digital currencies like bitcoin. Did you know that bitcoin has displayed a high level of \"anti-fragility\" despite attempts to regulate it and attacks by hackers? That's quite impressive for a currency that's still in its early stages",
-                            "Nope, sorry! The physical manifestation of the currency is actually not as important as the institution that issues it or the network that secures it. Don't worry though, you're not alone in making this mistake. Even the Ancient Greeks used to mint their coins out of perishable materials like bronze and copper",
+                            "Nope, sorry! The physical manifestation of the currency is actually not as important as the institution that issues it or the network that secures it.",
                             "Close, but not quite! The institution that issues the currency is actually an important factor in determining its durability. But hey, at least you're not alone in this mistake. There have been many governments and currencies that have come and gone over the centuries."
                         ],
                         "question": "Which of the following is an important factor in determining the durability of a good store of value",
@@ -631,7 +631,7 @@
                             "No. In fact, physical goods often require permission to cross borders and can easily be confiscated. Better luck next time",
                             "Sorry, but the opposite is actually true. The fiat banking system, which is regulated by states, requires human intervention to report and prevent certain uses of monetary goods, making it prone to censorship. Try again!"
                         ],
-                        "question": "Which of the following is NOT a reason that Bitcoin is considered a censorship-resistant good",
+                        "question": "Which of the following is the reason that Bitcoin is considered a censorship-resistant good",
                         "text": "Censorship-resistance is an attribute that has become increasingly important in the digital age, as it refers to the difficulty that external parties, such as corporations or governments, have in preventing an individual from using a particular good.\n\nThis attribute is particularly valuable for individuals living under regimes that enforce capital controls or prohibit certain forms of trade. Bitcoin is often cited as being a censorship-resistant good due to its decentralized, peer-to-peer network, which allows for transactions to be made without human intervention or permission.\n\nIn contrast, the fiat banking system is regulated by states and requires human intervention to report and prevent certain uses of monetary goods, such as capital controls.\n\nGold, although it is not issued by states, can be difficult to transmit at a distance and is therefore more subject to state regulation.\n",
                         "title": "No permission required"
                     }
@@ -742,7 +742,7 @@
                             "Sorry to break it to you, but Bitcoin is still in the process of becoming more widely accepted as money. Better luck next time!"
                         ],
                         "question": "What is the current stage of Bitcoin's evolution",
-                        "text": "Bitcoin is currently changing from the first stage of being used as money to the second stage. It may take several years for Bitcoin to be used as a way to trade goods and services, like other currencies.\n\nThe process of Bitcoin becoming more widely accepted as money is uncertain, as the same process took a long time for gold and no one alive has seen a good become money in the same way that is happening with Bitcoin. There is not a lot of experience with this process, but developments around the world are very promising and happening faster in the interconnected digital age.\n",
+                        "text": "Bitcoin is widely use as a store of value. It may take several years for Bitcoin to be used as a way to trade goods and services, like other currencies.\n\nThe process of Bitcoin becoming more widely accepted as money is uncertain, as the same process took a long time for gold and no one alive has seen a good become money in the same way that is happening with Bitcoin. There is not a lot of experience with this process, but developments around the world are very promising and happening faster in the interconnected digital age.\n",
                         "title": "Bitcoin is in the stage of monetization"
                     }
                 }
@@ -769,7 +769,7 @@
                         "answers": [
                             "To improve the workings of small barter networks.",
                             "To facilitate large scale trade networks.",
-                            "To reduce the need for credit."
+                            "To eliminate credit."
                         ],
                         "feedback": [
                             "Congratulations! It's interesting to think about how money has evolved over time, from its early use as a means of facilitating trade in small communities to its current role as a medium of exchange in modern economies",
@@ -887,7 +887,7 @@
                             "Gas prices might fluctuate for a variety of reasons, but this particular scenario doesn't have much to do with it. Try again!"
                         ],
                         "question": "What is a potential outcome of banks issuing more paper notes than they held deposits",
-                        "text": "Banks sometimes issued more paper notes than they had deposits, which could cause problems in the economy. If people started to doubt the solvency of a bank, they might rush to withdraw their money all at once before others do. This is called a bank run.\n\nThe sudden loss of deposits from the bank run could reveal that the bank was using too much leverage through Fractional Reserve Banking. This could cause a lack of liquidity and bring the whole financial system to a stop.\n",
+                        "text": "Banks sometimes issued more paper notes than they had deposits, which could cause problems in the economy. If people started to doubt the solvency of a bank, they might rush to withdraw their money all at once before others do. This is called a bank run.\n\nThe sudden loss of deposits from the bank run could reveal that the bank was using too much leverage through Fractional Reserve Banking. In this case people wouldn't be able to take their hard earned money off the bank.\n",
                         "title": "Problems of Fractional Reserve Banking"
                     },
                     "modernCentralBanking": {
@@ -947,7 +947,7 @@
                             "Surely this would benefit the WTO's funding immensely, but this is not how the global reserve currency is defined or chosen. Try again!"
                         ],
                         "question": "What is a global reserve currency",
-                        "text": "A global reserve currency is a type of money that is widely used in international trade and financial transactions. It is the preferred or most in-demand currency for settling transactions, as it is generally stable and widely accepted.\n\nChanges to the global reserve currency can have significant geopolitical implications, as it can affect the balance of power between countries.\n\nThe dominant global reserve currency has typically had a lifespan of several decades, with the US dollar serving as the dominant global reserve currency for much of the 20th century.\n",
+                        "text": "A global reserve currency is a type of money that is widely used in international trade and financial transactions. It is the preferred or most in-demand currency for settling transactions, as it is generally stable and widely accepted.\n\nChanges to the global reserve currency can have significant geopolitical implications, as it can affect the balance of power between countries.\n\nThe dominant global reserve currency has typically had a lifespan of several decades, with the US dollar serving as the dominant global reserve currency since the 20th century.\n",
                         "title": "The Global Reserve Currency"
                     }
                 }
