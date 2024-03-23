@@ -362,6 +362,11 @@ describe("Receive via Onchain on USD", () => {
   })
 
   it("Click Onchain button", async () => {
+    // flaky on android
+    if (process.env.E2E_DEVICE === "android") {
+      await browser.pause(100)
+    }
+
     const onchainButton = await $(selector("Onchain", "StaticText"))
     await onchainButton.waitForDisplayed({ timeout })
     await onchainButton.click()

@@ -5,7 +5,6 @@ import {
   clickBackButton,
   clickIcon,
   clickOnSetting,
-  waitTillSettingDisplayed,
   selector,
   scrollDown,
   clickButton,
@@ -15,6 +14,7 @@ import {
   getSecondEmail,
   clickAlertLastButton,
   sleep,
+  waitTillTextDisplayed,
 } from "./utils"
 
 describe("Login Flow", () => {
@@ -30,11 +30,11 @@ describe("Login Flow", () => {
 
   it("are we logged in?", async () => {
     await clickOnSetting(LL.common.account())
-    await waitTillSettingDisplayed(LL.common.transactionLimits())
+    await waitTillTextDisplayed(LL.AccountScreen.accountId())
   })
 
   it("adding an email", async () => {
-    await clickOnSetting(LL.AccountScreen.emailAuthentication())
+    await clickOnSetting(LL.AccountScreen.tapToAddEmail())
 
     const inboxRes = await getInbox()
     if (!inboxRes) throw new Error("No inbox response")
@@ -72,10 +72,12 @@ describe("Login Flow", () => {
   })
 
   it("log out", async () => {
-    await clickOnSetting(LL.AccountScreen.logOutAndDeleteLocalData())
+    await waitTillTextDisplayed(LL.AccountScreen.accountId())
+    await scrollDown()
+    await clickButton(LL.AccountScreen.logOutAndDeleteLocalData(), true)
 
     clickAlertLastButton(LL.AccountScreen.IUnderstand())
-    await sleep(250)
+    await sleep(2000)
     clickAlertLastButton(LL.common.ok())
   })
 

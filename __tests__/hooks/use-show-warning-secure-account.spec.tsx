@@ -9,7 +9,7 @@ import {
   WarningSecureAccountDocument,
 } from "@app/graphql/generated"
 import { IsAuthedContextProvider } from "@app/graphql/is-authed-context"
-import { useShowWarningSecureAccount } from "@app/screens/settings-screen/show-warning-secure-account"
+import { useShowWarningSecureAccount } from "@app/screens/settings-screen/account/show-warning-secure-account-hook"
 import { renderHook } from "@testing-library/react-hooks"
 
 // FIXME: the mockPrice doesn't work as expect.

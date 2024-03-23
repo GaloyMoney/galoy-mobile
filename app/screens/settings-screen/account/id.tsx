@@ -2,14 +2,14 @@ import { useCallback } from "react"
 import { View } from "react-native"
 
 import { GaloyIconButton } from "@app/components/atomic/galoy-icon-button"
-import { useAccountScreenQuery } from "@app/graphql/generated"
+import { useSettingsScreenQuery } from "@app/graphql/generated"
 import { useI18nContext } from "@app/i18n/i18n-react"
 import { toastShow } from "@app/utils/toast"
 import Clipboard from "@react-native-clipboard/clipboard"
-import { Text, makeStyles } from "@rneui/themed"
+import { Skeleton, Text, makeStyles } from "@rneui/themed"
 
 export const AccountId: React.FC = () => {
-  const { data } = useAccountScreenQuery()
+  const { data, loading } = useSettingsScreenQuery()
   const { LL } = useI18nContext()
 
   const styles = useStyles()
@@ -29,41 +29,48 @@ export const AccountId: React.FC = () => {
   }, [LL, accountId])
 
   return (
-    <View style={styles.accountId}>
-      <Text type="p2">{LL.AccountScreen.yourAccountId()}</Text>
-      <View style={styles.wrapper}>
-        <View style={styles.accIdWrapper}>
-          <View style={styles.accIdXs}>
-            {Array(20)
-              .fill(null)
-              .map((_, i) => (
-                <View style={styles.circle} key={i} />
-              ))}
+    <View>
+      <Text type="p2" bold>
+        {LL.AccountScreen.accountId()}
+      </Text>
+      {loading ? (
+        <Skeleton style={styles.wrapper} />
+      ) : (
+        <View style={[styles.wrapper, styles.spacing]}>
+          <View style={styles.accIdWrapper}>
+            <View style={styles.accIdXs}>
+              {Array(20)
+                .fill(null)
+                .map((_, i) => (
+                  <View style={styles.circle} key={i} />
+                ))}
+            </View>
+            <Text type="p3" style={styles.accIdText}>
+              {last6digitsOfAccountId}
+            </Text>
           </View>
-          <Text type="p3" style={styles.accIdText}>
-            {last6digitsOfAccountId}
-          </Text>
+          <GaloyIconButton
+            name="copy-paste"
+            size="medium"
+            iconOnly
+            onPress={copyToClipboard}
+          />
         </View>
-        <GaloyIconButton
-          name="copy-paste"
-          size="medium"
-          iconOnly
-          onPress={copyToClipboard}
-        />
-      </View>
+      )}
     </View>
   )
 }
 
 const useStyles = makeStyles(({ colors }) => ({
-  accountId: {
-    margin: 20,
-  },
   circle: {
     height: 4,
     width: 4,
     borderRadius: 2,
     backgroundColor: colors.black,
+  },
+  spacing: {
+    paddingHorizontal: 10,
+    paddingVertical: 6,
   },
   wrapper: {
     marginTop: 5,
@@ -73,8 +80,8 @@ const useStyles = makeStyles(({ colors }) => ({
     justifyContent: "space-between",
     backgroundColor: colors.grey5,
     borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
+    marginBottom: 10,
+    height: 48,
   },
   accIdWrapper: {
     display: "flex",

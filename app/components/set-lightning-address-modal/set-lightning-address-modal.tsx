@@ -175,11 +175,11 @@ export const SetLightningAddressModalUI = ({
 
   return (
     <CustomModal
-      title={LL.SetAddressModal.title({ bankName })}
-      minHeight={"50%"}
+      title={LL.SetAddressModal.setLightningAddress()}
+      minHeight={380}
       toggleModal={toggleModal}
       isVisible={isVisible}
-      primaryButtonTitle={LL.SetAddressModal.title({ bankName })}
+      primaryButtonTitle={LL.SetAddressModal.setLightningAddress()}
       primaryButtonLoading={loading}
       primaryButtonOnPress={setLightningAddress}
       primaryButtonDisabled={!lnAddress}
@@ -274,7 +274,7 @@ const useStyles = makeStyles(({ colors }) => ({
     paddingHorizontal: 12,
     borderRadius: 8,
     minHeight: 60,
-    backgroundColor: colors.grey5,
+    backgroundColor: colors.grey4,
     alignItems: "center",
     justifyContent: "space-between",
   },

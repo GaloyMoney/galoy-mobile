@@ -4,7 +4,7 @@ import { Alert } from "react-native"
 import { gql } from "@apollo/client"
 import { CodeInput } from "@app/components/code-input"
 import {
-  AccountScreenDocument,
+  SettingsScreenDocument,
   useUserTotpRegistrationValidateMutation,
 } from "@app/graphql/generated"
 import { useAppConfig } from "@app/hooks"
@@ -59,7 +59,7 @@ export const TotpRegistrationValidateScreen: React.FC<Props> = ({ route }) => {
 
         const res = await totpRegistrationValidate({
           variables: { input: { totpCode: code, totpRegistrationId, authToken } },
-          refetchQueries: [AccountScreenDocument],
+          refetchQueries: [SettingsScreenDocument],
         })
 
         if (res.data?.userTotpRegistrationValidate.errors) {
@@ -73,7 +73,14 @@ export const TotpRegistrationValidateScreen: React.FC<Props> = ({ route }) => {
             {
               text: LL.common.ok(),
               onPress: () => {
-                navigation.navigate("accountScreen")
+                navigation.reset({
+                  routes: [
+                    {
+                      name: "Primary",
+                    },
+                    { name: "accountScreen" },
+                  ],
+                })
               },
             },
           ])

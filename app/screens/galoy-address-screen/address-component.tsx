@@ -1,7 +1,6 @@
 import { Linking, Pressable, Share, View } from "react-native"
 
 import { GaloyIcon } from "@app/components/atomic/galoy-icon"
-import { useAppConfig } from "@app/hooks"
 import { useI18nContext } from "@app/i18n/i18n-react"
 import { toastShow } from "@app/utils/toast"
 import Clipboard from "@react-native-clipboard/clipboard"
@@ -33,8 +32,6 @@ const AddressComponent: React.FC<AddressComponentprops> = ({
     theme: { colors },
   } = useTheme()
   const styles = useStyles()
-  const { appConfig } = useAppConfig()
-  const { name: bankName } = appConfig.galoyInstance
   const trimmedUrl =
     address.includes("https://") || address.includes("http://")
       ? address.replace("https://", "")
@@ -46,9 +43,7 @@ const AddressComponent: React.FC<AddressComponentprops> = ({
       message: (translations) => {
         switch (addressType) {
           case addressTypes.lightning:
-            return translations.GaloyAddressScreen.copiedAddressToClipboard({
-              bankName,
-            })
+            return translations.GaloyAddressScreen.copiedLightningAddressToClipboard()
           case addressTypes.pos:
             return translations.GaloyAddressScreen.copiedCashRegisterLinkToClipboard()
           case addressTypes.paycode:

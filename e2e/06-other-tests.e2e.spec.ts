@@ -5,7 +5,6 @@ import {
   clickIcon,
   clickOnSetting,
   waitTillOnHomeScreen,
-  waitTillSettingDisplayed,
   checkContact,
   selector,
   clickOnBottomTab,
@@ -45,7 +44,7 @@ describe("Change Language Flow", () => {
 
   it("navigates back to move home screen", async () => {
     await clickBackButton()
-    await waitTillSettingDisplayed(enLL.common.account())
+    await waitTillTextDisplayed(enLL.common.preferences())
     await clickBackButton()
     await waitTillOnHomeScreen()
   })

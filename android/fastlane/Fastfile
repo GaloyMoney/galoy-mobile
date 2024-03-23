@@ -109,7 +109,7 @@ platform :android do
       file_path: ENV["GRADLE_APK_OUTPUT_PATH"]
     )
 
-    max_retries = 3
+    max_retries = 10
     retries = 0
 
     begin

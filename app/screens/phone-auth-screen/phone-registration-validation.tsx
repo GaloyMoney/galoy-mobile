@@ -7,7 +7,6 @@ import { GaloyErrorBox } from "@app/components/atomic/galoy-error-box"
 import { GaloyInfo } from "@app/components/atomic/galoy-info"
 import { GaloySecondaryButton } from "@app/components/atomic/galoy-secondary-button"
 import {
-  AccountScreenDocument,
   PhoneCodeChannelType,
   useUserPhoneRegistrationValidateMutation,
 } from "@app/graphql/generated"
@@ -191,7 +190,6 @@ export const PhoneRegistrationValidateScreen: React.FC<
         logAddPhoneAttempt()
         const { data } = await phoneValidate({
           variables: { input: { phone, code } },
-          refetchQueries: [AccountScreenDocument],
         })
 
         const errors = data?.userPhoneRegistrationValidate?.errors || []

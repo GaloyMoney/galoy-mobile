@@ -68,6 +68,8 @@ describe("Login with Phone Flow", () => {
   })
 
   it("Get the access token from clipboard", async () => {
+    await scrollDown()
+    await scrollDown()
     await getAccessTokenFromClipboard(LL)
   })
 })

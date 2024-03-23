@@ -54,7 +54,6 @@ export const GaloyAddressScreen = () => {
   })
 
   const { appConfig } = useAppConfig()
-  const { name: bankName } = appConfig.galoyInstance
 
   const [explainerModalVisible, setExplainerModalVisible] = React.useState(false)
   const [isPosExplainerModalOpen, setIsPosExplainerModalOpen] = React.useState(false)
@@ -94,7 +93,7 @@ export const GaloyAddressScreen = () => {
               <AddressComponent
                 addressType={"lightning"}
                 address={lightningAddress}
-                title={LL.GaloyAddressScreen.yourAddress({ bankName })}
+                title={LL.GaloyAddressScreen.yourLightningAddress()}
                 onToggleDescription={toggleExplainerModal}
               />
               <AddressComponent

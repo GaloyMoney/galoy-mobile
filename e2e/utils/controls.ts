@@ -34,7 +34,7 @@ export const waitTillButtonDisplayed = async (title: string) => {
 
 export const clickPressable = async (title: string) => {
   const button = await $(selector(title, "Other"))
-  await button.waitForEnabled({ timeout })
+  await button.waitForDisplayed({ timeout })
   await button.click()
 }
 
