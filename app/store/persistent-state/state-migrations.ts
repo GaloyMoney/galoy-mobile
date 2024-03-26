@@ -108,6 +108,9 @@ const stateMigrations: StateMigrations = {
 }
 
 export type PersistentState = PersistentState_6
+export type SecurePersistentState = {
+  galoyAuthToken: string
+}
 
 export const defaultPersistentState: PersistentState = {
   schemaVersion: 6,

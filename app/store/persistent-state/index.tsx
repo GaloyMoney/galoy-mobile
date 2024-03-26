@@ -2,6 +2,7 @@ import { createContext, useContext, PropsWithChildren } from "react"
 import * as React from "react"
 
 import { loadJson, saveJson } from "@app/utils/storage"
+import KeyStoreWrapper from "@app/utils/storage/secureStorage"
 
 import {
   defaultPersistentState,
@@ -13,11 +14,14 @@ const PERSISTENT_STATE_KEY = "persistentState"
 
 const loadPersistentState = async (): Promise<PersistentState> => {
   const data = await loadJson(PERSISTENT_STATE_KEY)
-  return migrateAndGetPersistentState(data)
+  const secureData = await KeyStoreWrapper.getSecurePersistentState()
+  return migrateAndGetPersistentState({ ...data, ...secureData })
 }
 
 const savePersistentState = async (state: PersistentState) => {
-  return saveJson(PERSISTENT_STATE_KEY, state)
+  const { galoyAuthToken, ...data } = state
+  saveJson(PERSISTENT_STATE_KEY, data)
+  KeyStoreWrapper.setSecurePersistentState({ galoyAuthToken })
 }
 
 // TODO: should not be exported
