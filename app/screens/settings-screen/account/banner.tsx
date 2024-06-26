@@ -53,12 +53,14 @@ export const AccountBanner = () => {
         <Text type="p2">
           {isUserLoggedIn ? usernameTitle : LL.SettingsScreen.logInOrCreateAccount()}
         </Text>
-        <TouchableOpacity style={styles.switch} onPress={handleSwitchPress}>
-          <GaloyIcon name="switch" size={20} />
-          <Text type="p2" style={{ color: colors.primary }}>
-            {LL.AccountScreen.switch()}
-          </Text>
-        </TouchableOpacity>
+        {isUserLoggedIn && (
+          <TouchableOpacity style={styles.switch} onPress={handleSwitchPress}>
+            <GaloyIcon name="switch" size={20} color={colors.primary} />
+            <Text type="p2" style={{ color: colors.primary }}>
+              {LL.AccountScreen.switch()}
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
     </TouchableWithoutFeedback>
   )

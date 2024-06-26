@@ -7590,6 +7590,10 @@ type RootTranslation = {
 		 * L​o​g​o​u​t
 		 */
 		logout: string
+		/**
+		 * U​n​a​b​l​e​ ​t​o​ ​f​e​t​c​h​ ​p​r​o​f​i​l​e​s​ ​a​t​ ​t​h​i​s​ ​t​i​m​e
+		 */
+		error: string
 	}
 	TotpRegistrationInitiateScreen: {
 		/**
@@ -16613,6 +16617,10 @@ export type TranslationFunctions = {
 		 * Logout
 		 */
 		logout: () => LocalizedString
+		/**
+		 * Unable to fetch profiles at this time
+		 */
+		error: () => LocalizedString
 	}
 	TotpRegistrationInitiateScreen: {
 		/**

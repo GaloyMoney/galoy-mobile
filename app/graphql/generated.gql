@@ -1644,6 +1644,13 @@ query transactionListForDefaultAccount($first: Int, $after: String, $last: Int, 
   }
 }
 
+query username {
+  me {
+    username
+    __typename
+  }
+}
+
 query walletOverviewScreen {
   me {
     id

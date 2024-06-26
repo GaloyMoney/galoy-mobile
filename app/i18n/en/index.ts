@@ -2427,6 +2427,7 @@ const en: BaseTranslation = {
   ProfileScreen: {
     addNew : "Add new",
     logout: "Logout",
+    error: "Unable to fetch profiles at this time",
   },
   TotpRegistrationInitiateScreen: {
     title: "Two-factor authentication",
