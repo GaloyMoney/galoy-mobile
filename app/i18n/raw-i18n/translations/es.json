@@ -657,13 +657,13 @@
                     },
                     "collectible": {
                         "answers": [
-                            "Monedas de cobre y plata.",
                             "Conchas, cuentas y oro.",
+                            "Monedas de cobre y plata.",
                             "Billetes de papel con fotos de líderes famosos"
                         ],
                         "feedback": [
-                            "Lo siento, eso es incorrecto. Las monedas de cobre y plata no se utilizaron como dinero al principio de su evolución.",
                             "¡Felicitaciones, lo hiciste bien! Es interesante notar que las conchas, las cuentas y el oro fueron valorados por su apariencia o cualidades especiales antes de ser ampliamente utilizados como dinero.",
+                            "Lo siento, eso es incorrecto. Las monedas de cobre y plata no se utilizaron como dinero al principio de su evolución.",
                             "¡Es Equivocado! Pero al menos estás pensando en las formas más modernas de dinero. Los billetes de papel con fotografías de líderes famosos no se utilizaron al principio de la evolución del dinero."
                         ],
                         "question": "¿Cuáles fueron algunos ejemplos de formas tempranas de dinero que fueron valoradas por su apariencia o cualidades especiales?",

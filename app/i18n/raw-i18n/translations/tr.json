@@ -657,13 +657,13 @@
                     },
                     "collectible": {
                         "answers": [
-                            "Bakır ve gümüş madeni paralar",
                             "Deniz kabukları, boncuklar ve altın",
+                            "Bakır ve gümüş madeni paralar",
                             "Üzerinde ünlü liderlerin resimleri bulunan kağıt paralar"
                         ],
                         "feedback": [
-                            "Üzgünüm, bu yanlış. Bakır ve gümüş madeni paralar ilk ortaya çıktıklarında para olarak kullanılmıyordu",
                             "Tebrikler, doğru bildiniz! Deniz kabukları, boncuklar ve altının, yaygın olarak para olarak kullanılmadan önce görünümleri veya özel nitelikleri nedeniyle değer gördüğünü belirtmek şaşırtıcıdır",
+                            "Üzgünüm, bu yanlış. Bakır ve gümüş madeni paralar ilk ortaya çıktıklarında para olarak kullanılmıyordu",
                             "Yanlış! Ama en azından paranın daha modern şekilleri hakkında düşünüyorsunuz. Üzerinde ünlü liderlerin resimleri bulunan kağıt paralar, paranın evriminin başlangıcında kullanılmıyordu."
                         ],
                         "question": "Görünüşleri ya da özel nitelikleri nedeniyle değer verilen ilk para biçimlerinin bazı örnekleri nelerdir?",

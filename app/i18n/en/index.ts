@@ -694,13 +694,13 @@ const en: BaseTranslation = {
           },
           collectible: {
             answers: [
-              "Coins made of copper and silver",
               "Shells, beads, and gold",
+              "Coins made of copper and silver",
               "Paper bills with pictures of famous leaders",
             ],
             feedback: [
-              "Sorry, that's incorrect. Copper and silver coins were not used as money in the very beginning of its evolution",
               "Congratulations, you got it right! It's interesting to note that shells, beads, and gold were all valued for their appearance or special qualities before becoming widely used as money",
+              "Sorry, that's incorrect. Copper and silver coins were not used as money in the very beginning of its evolution",
               "Wrong! But at least you're thinking about the more modern forms of money. Paper bills with pictures of famous leaders were not used in the very beginning of money's evolution.",
             ],
             question:

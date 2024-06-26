@@ -657,13 +657,13 @@
                     },
                     "collectible": {
                         "answers": [
-                            "Monedes fetes de coure i plata",
                             "Petxines, pedres i or",
+                            "Monedes fetes de coure i plata",
                             "Bitllets amb imatges de líders famosos."
                         ],
                         "feedback": [
-                            "Ho sento, això és incorrecte. Les monedes de coure i plata no es van utilitzar com a diners al principi de la seva evolució.",
                             "Felicitats, l'has encertat! És interessant assenyalar que les petxines, les perles i l'or eren valorats pel seu aspecte o qualitats especials abans d'utilitzar-se àmpliament com a diners.",
+                            "Ho sento, això és incorrecte. Les monedes de coure i plata no es van utilitzar com a diners al principi de la seva evolució.",
                             "Incorrecte! Però almenys estàs pensant en les formes més modernes de diners. Els bitllets de paper amb imatges de líders famosos no es van utilitzar al principi de l'evolució dels diners."
                         ],
                         "question": "Quins són exemples de les primeres formes de diners que es valoraven pel seu aspecte o qualitats especials?",

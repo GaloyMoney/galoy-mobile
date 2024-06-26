@@ -2124,11 +2124,11 @@ type RootTranslation = {
 					collectible: {
 						answers: {
 							/**
-							 * C​o​i​n​s​ ​m​a​d​e​ ​o​f​ ​c​o​p​p​e​r​ ​a​n​d​ ​s​i​l​v​e​r
+							 * S​h​e​l​l​s​,​ ​b​e​a​d​s​,​ ​a​n​d​ ​g​o​l​d
 							 */
 							'0': string
 							/**
-							 * S​h​e​l​l​s​,​ ​b​e​a​d​s​,​ ​a​n​d​ ​g​o​l​d
+							 * C​o​i​n​s​ ​m​a​d​e​ ​o​f​ ​c​o​p​p​e​r​ ​a​n​d​ ​s​i​l​v​e​r
 							 */
 							'1': string
 							/**
@@ -2138,11 +2138,11 @@ type RootTranslation = {
 						}
 						feedback: {
 							/**
-							 * S​o​r​r​y​,​ ​t​h​a​t​'​s​ ​i​n​c​o​r​r​e​c​t​.​ ​C​o​p​p​e​r​ ​a​n​d​ ​s​i​l​v​e​r​ ​c​o​i​n​s​ ​w​e​r​e​ ​n​o​t​ ​u​s​e​d​ ​a​s​ ​m​o​n​e​y​ ​i​n​ ​t​h​e​ ​v​e​r​y​ ​b​e​g​i​n​n​i​n​g​ ​o​f​ ​i​t​s​ ​e​v​o​l​u​t​i​o​n
+							 * C​o​n​g​r​a​t​u​l​a​t​i​o​n​s​,​ ​y​o​u​ ​g​o​t​ ​i​t​ ​r​i​g​h​t​!​ ​I​t​'​s​ ​i​n​t​e​r​e​s​t​i​n​g​ ​t​o​ ​n​o​t​e​ ​t​h​a​t​ ​s​h​e​l​l​s​,​ ​b​e​a​d​s​,​ ​a​n​d​ ​g​o​l​d​ ​w​e​r​e​ ​a​l​l​ ​v​a​l​u​e​d​ ​f​o​r​ ​t​h​e​i​r​ ​a​p​p​e​a​r​a​n​c​e​ ​o​r​ ​s​p​e​c​i​a​l​ ​q​u​a​l​i​t​i​e​s​ ​b​e​f​o​r​e​ ​b​e​c​o​m​i​n​g​ ​w​i​d​e​l​y​ ​u​s​e​d​ ​a​s​ ​m​o​n​e​y
 							 */
 							'0': string
 							/**
-							 * C​o​n​g​r​a​t​u​l​a​t​i​o​n​s​,​ ​y​o​u​ ​g​o​t​ ​i​t​ ​r​i​g​h​t​!​ ​I​t​'​s​ ​i​n​t​e​r​e​s​t​i​n​g​ ​t​o​ ​n​o​t​e​ ​t​h​a​t​ ​s​h​e​l​l​s​,​ ​b​e​a​d​s​,​ ​a​n​d​ ​g​o​l​d​ ​w​e​r​e​ ​a​l​l​ ​v​a​l​u​e​d​ ​f​o​r​ ​t​h​e​i​r​ ​a​p​p​e​a​r​a​n​c​e​ ​o​r​ ​s​p​e​c​i​a​l​ ​q​u​a​l​i​t​i​e​s​ ​b​e​f​o​r​e​ ​b​e​c​o​m​i​n​g​ ​w​i​d​e​l​y​ ​u​s​e​d​ ​a​s​ ​m​o​n​e​y
+							 * S​o​r​r​y​,​ ​t​h​a​t​'​s​ ​i​n​c​o​r​r​e​c​t​.​ ​C​o​p​p​e​r​ ​a​n​d​ ​s​i​l​v​e​r​ ​c​o​i​n​s​ ​w​e​r​e​ ​n​o​t​ ​u​s​e​d​ ​a​s​ ​m​o​n​e​y​ ​i​n​ ​t​h​e​ ​v​e​r​y​ ​b​e​g​i​n​n​i​n​g​ ​o​f​ ​i​t​s​ ​e​v​o​l​u​t​i​o​n
 							 */
 							'1': string
 							/**
@@ -11172,11 +11172,11 @@ export type TranslationFunctions = {
 					collectible: {
 						answers: {
 							/**
-							 * Coins made of copper and silver
+							 * Shells, beads, and gold
 							 */
 							'0': () => LocalizedString
 							/**
-							 * Shells, beads, and gold
+							 * Coins made of copper and silver
 							 */
 							'1': () => LocalizedString
 							/**
@@ -11186,11 +11186,11 @@ export type TranslationFunctions = {
 						}
 						feedback: {
 							/**
-							 * Sorry, that's incorrect. Copper and silver coins were not used as money in the very beginning of its evolution
+							 * Congratulations, you got it right! It's interesting to note that shells, beads, and gold were all valued for their appearance or special qualities before becoming widely used as money
 							 */
 							'0': () => LocalizedString
 							/**
-							 * Congratulations, you got it right! It's interesting to note that shells, beads, and gold were all valued for their appearance or special qualities before becoming widely used as money
+							 * Sorry, that's incorrect. Copper and silver coins were not used as money in the very beginning of its evolution
 							 */
 							'1': () => LocalizedString
 							/**

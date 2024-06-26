@@ -666,13 +666,13 @@
                     },
                     "collectible": {
                         "answers": [
-                            "Réz- és ezüstpénzek",
                             "Kagylók, gyöngyök és arany",
+                            "Réz- és ezüstpénzek",
                             "Híres vezetők képével ellátott papírpénzek"
                         ],
                         "feedback": [
-                            "Sajnálom, ez helytelen. Réz- és ezüstpénzeket nem használtak pénzként annak fejlődésének nagyon kezdetén.",
                             "Gratulálok, helyes válasz! Érdekes, hogy a kagylók, gyöngyök és az arany mind értékesek voltak megjelenésük vagy különleges tulajdonságaik miatt, mielőtt széles körben elterjedtek volna pénzként.",
+                            "Sajnálom, ez helytelen. Réz- és ezüstpénzeket nem használtak pénzként annak fejlődésének nagyon kezdetén.",
                             "Rossz válasz! De legalább a modernabb pénzformákról gondolkodsz. Híres vezetők képével ellátott papírpénzek nem voltak jelen a pénz fejlődésének korai kezdetén."
                         ],
                         "question": "Melyek voltak azok a korai pénzformák, amelyeket megjelenésük vagy különleges tulajdonságaik miatt értékeltek",

@@ -657,13 +657,13 @@
                     },
                     "collectible": {
                         "answers": [
-                            "Moedas feitas de cobre e prata",
                             "Conchas, miçangas e ouro",
+                            "Moedas feitas de cobre e prata",
                             "Notas de papel com imagens de líderes famosos"
                         ],
                         "feedback": [
-                            "Desculpe, isso está incorreto. Moedas de cobre e prata não foram usadas como dinheiro no início de sua evolução.",
                             "Parabéns, você acertou! É interessante notar que conchas, miçangas e ouro eram todos valorizados por sua aparência ou qualidades especiais antes de se tornarem amplamente utilizados como dinheiro.",
+                            "Desculpe, isso está incorreto. Moedas de cobre e prata não foram usadas como dinheiro no início de sua evolução.",
                             "Errado! Mas pelo menos você está pensando nas formas mais modernas de dinheiro. As notas de papel com imagens de líderes famosos não foram usadas no início da evolução do dinheiro."
                         ],
                         "question": "Quais foram alguns exemplos de formas antigas de dinheiro que eram valorizadas por sua aparência ou qualidades especiais?",

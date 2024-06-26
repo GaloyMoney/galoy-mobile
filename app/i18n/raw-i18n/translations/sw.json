@@ -657,13 +657,13 @@
                     },
                     "collectible": {
                         "answers": [
-                            "Sarafu zilizotengenezwa kwa shaba na fedha",
                             "Vipepeo, vikuku, na dhahabu",
+                            "Sarafu zilizotengenezwa kwa shaba na fedha",
                             "Noti za karatasi zenye picha za viongozi maarufu"
                         ],
                         "feedback": [
-                            "Samahani, hiyo si sahihi. Sarafu za shaba na fedha hazikuwa zikitumika kama pesa mwanzoni mwa ukuaji wake",
                             "Hongera, umepata sahihi! Ni jambo la kuvutia kufahamu kwamba vipepeo, vikuku, na dhahabu vyote vilithaminiwa kwa muonekano wake au sifa maalum kabla ya kutumika sana kama pesa",
+                            "Samahani, hiyo si sahihi. Sarafu za shaba na fedha hazikuwa zikitumika kama pesa mwanzoni mwa ukuaji wake",
                             "Sio sahihi! Lakini angalau unaifikiria kuhusu aina za pesa za kisasa zaidi. Noti za karatasi zenye picha za viongozi maarufu hazikutumika sana mwanzoni mwa ukuaji wa pesa."
                         ],
                         "question": "Ni mifano gani ya awali ya pesa ambayo ilithaminiwa kwa muonekano wake au sifa maalum",

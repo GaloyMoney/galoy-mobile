@@ -657,13 +657,13 @@
                     },
                     "collectible": {
                         "answers": [
-                            "Mønter lavet af kobber og sølv",
                             "Skaller, perler og guld",
+                            "Mønter lavet af kobber og sølv",
                             "Papirpenge med billeder af berømte ledere"
                         ],
                         "feedback": [
-                            "Beklager, det er forkert. Kobber- og sølvmønter blev ikke brugt som penge i begyndelsen af pengenes udvikling",
                             "Tillykke, det er rigtigt! Det er interessant at bemærke, at skaller, perler og guld alle blev værdsat for deres udseende eller specielle kvaliteter, før de blev almindeligt anvendt som penge",
+                            "Beklager, det er forkert. Kobber- og sølvmønter blev ikke brugt som penge i begyndelsen af pengenes udvikling",
                             "Forkert! Men i det mindste tænker du på de mere moderne former for penge. Papirpenge med billeder af berømte ledere blev ikke anvendt i begyndelsen af pengenes udvikling"
                         ],
                         "question": "Hvad var nogle eksempler på tidlige former for penge, der blev værdsat for deres udseende eller specielle kvaliteter",

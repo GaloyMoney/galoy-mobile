@@ -657,13 +657,13 @@
                     },
                     "collectible": {
                         "answers": [
-                            "Ssente ezikoleddwa mu kikomo ne ffeeza",
                             "Ebisusunku, enkwanzi, ne zaabu",
+                            "Ssente ezikoleddwa mu kikomo ne ffeeza",
                             "Ssente z'empapula eziriko ebifaananyi by'abakulembeze ab'amannya"
                         ],
                         "feedback": [
-                            "Bambi, ekyo si kituufu. Effeeza n'ekikomo tezaakozesebwanga nga ssente mu ntandikwa yennyini ey’okukulaakulana kwazo",
                             "Tukuyozaayoza, okifunye bulungi! Kisanyusa okukimanya nti ebisusunku, obululu ne zaabu byonna byali bya muwendo olw’endabika yabyo oba engeri ez’enjawulo nga tebinnaba kukozesebwa nnyo nga ssente",
+                            "Bambi, ekyo si kituufu. Effeeza n'ekikomo tezaakozesebwanga nga ssente mu ntandikwa yennyini ey’okukulaakulana kwazo",
                             "Ki kyaamu! Naye waakiri olowooza ku ngeri za ssente ezisinga okuba ez’omulembe. Ebipapula by’ebisale ebiriko ebifaananyi by’abakulembeze ab’ettutumu tebyakozesebwa mu ntandikwa y’enkulaakulana ya ssente."
                         ],
                         "question": "Biki ebimu ku byokulabirako eby’engeri za ssente ezaasooka ezaali zitwalibwa ng’ez’omuwendo olw’endabika yazo oba engeri ez’enjawulo",
